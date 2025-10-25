@@ -3,10 +3,12 @@ import numpy as np
 from sklearn.cluster import DBSCAN
 from haversine import haversine
 from datetime import datetime, timedelta
+import matplotlib.pyplot as plt
 import os
 
 # Caminho do arquivo CSV (mesma pasta do script)
 base_path = os.path.dirname(__file__)
+imagens_path = os.path.join(base_path, "imagens")
 csv_path = os.path.join(base_path, "dados_pacientes.csv")
 
 # Ler o CSV
@@ -98,5 +100,47 @@ print(df_resultado[["diagnostico", "data", "local_lat", "local_lon", "cluster"]]
 
 
 #Exibir resultado por em torno do Período
-surtos = detectar_surtos_em_data(df, '2025-10-10')
+periodo = '2025-10-10'
+surtos = detectar_surtos_em_data(df, periodo)
 print(surtos)
+
+
+#Gerar Gráficos:
+# Configura cores diferentes para cada cluster
+cores = ['red', 'blue', 'green', 'orange', 'purple', 'brown', 'pink', 'gray']
+
+plt.figure(figsize=(8,6))
+for cluster_id in df_resultado['cluster'].unique():
+    grupo = df_resultado[df_resultado['cluster'] == cluster_id]
+    cor = 'black' if cluster_id == -1 else cores[cluster_id % len(cores)]
+    plt.scatter(grupo['local_lon'], grupo['local_lat'], c=cor, label=f'Cluster {cluster_id}', alpha=0.6)
+
+plt.xlabel('Longitude')
+plt.ylabel('Latitude')
+plt.title('Clusters detectados')
+plt.legend()
+plt.tight_layout()
+
+# Salva a figura como cluster.png na mesma pasta
+fig_path = os.path.join(imagens_path, "cluster.png")
+plt.savefig(fig_path)
+plt.close()  # fecha a figura para liberar memória
+
+#Gráfico de Barras
+
+# Agrupa por diagnóstico e conta casos
+contagem_doencas = df['diagnostico'].value_counts()  # Series: índice=diagnóstico, valor=quantidade
+
+# Cria gráfico de barras
+plt.figure(figsize=(8,6))
+contagem_doencas.plot(kind='bar', color='skyblue', edgecolor='black')
+plt.xlabel('Diagnóstico')
+plt.ylabel('Quantidade de casos')
+plt.title(f'Quantidade de casos em {periodo} ± 30 dias de diferença')
+plt.xticks(rotation=45)
+plt.tight_layout()
+
+# Salva a figura
+fig_path = os.path.join(imagens_path, "barras_doencas.png")
+plt.savefig(fig_path)
+plt.close()
