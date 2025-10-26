@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DBSCAN - Entrada de Dados</title>
+  <title>DBSCAN - Sistema de Análise Epidemiológica</title>
   <style>
     body { font-family: Arial, sans-serif; background: #f6f6f6; padding: 20px; }
     h1 { color: #333; }
@@ -11,13 +11,15 @@
     input, select { padding: 6px; width: 200px; }
     button { margin-top: 10px; padding: 8px 12px; border: none; background: #0078D7; color: white; border-radius: 4px; cursor: pointer; }
     button:hover { background: #005fa3; }
-    #saida { background: white; padding: 10px; border-radius: 5px; margin-top: 15px; white-space: pre-wrap; }
-    #grafico { margin-top: 20px; max-width: 90%; border: 1px solid #ccc; border-radius: 5px; }
+    #saida { background: white; padding: 10px; border-radius: 5px; margin-top: 15px; white-space: pre-wrap; display:none; }
+    img { margin-top: 15px; max-width: 90%; border: 1px solid #ccc; border-radius: 5px; display:none; }
+    .grafico-container { margin-top: 10px; }
   </style>
 </head>
 <body>
-  <h1>DBSCAN - Sistema de Análise</h1>
+  <h1>📊 DBSCAN - Sistema de Análise Epidemiológica</h1>
 
+  <!-- Entrada de dados -->
   <div>
     <label>Idade:</label>
     <input type="number" id="idade" required>
@@ -48,17 +50,34 @@
 
     <br>
     <button onclick="enviarDados()">📥 Enviar Dados</button>
-    <button onclick="rodarDBSCAN()">⚙️ Rodar DBSCAN</button>
+    <button onclick="rodarDBSCAN()">⚙️ Rodar DBSCAN Geral</button>
   </div>
 
+  <hr>
+
+  <!-- DBSCAN por data -->
+  <h2>🗓️ Rodar DBSCAN filtrado por data</h2>
+  <label>Escolha uma data:</label>
+  <input type="date" id="data_filtro">
+  <button onclick="rodarDBSCANporData()">🔍 Analisar Data</button>
+
+  <!-- Saída do Python -->
   <h2 id="titulo_saida" style="display:none">Saída do Python</h2>
-  <div id="saida" style="display:none">Aguardando execução...</div>
+  <div id="saida"></div>
 
-  <h2 id="titulo_grafico" style="display:none">Gráfico de Clusters</h2>
-  <img id="grafico" src="" alt="Gráfico de clusters" style="display:none">
+  <!-- Gráficos Gerais -->
+  <h2 id="titulo_grafico_geral" style="display:none">🗺️ Gráficos Gerais</h2>
+  <div class="grafico-container">
+    <img id="cluster_geral" src="" alt="Cluster Geral">
+    <img id="barras_geral" src="" alt="Barras Geral">
+  </div>
 
-  <h2 id="titulo_barras" style="display:none">Gráfico de Quantidade de Doenças</h2>
-  <img id="grafico_barras" src="" alt="Gráfico de barras de doenças" style="display:none">
+  <!-- Gráficos Filtrados -->
+  <h2 id="titulo_grafico_data" style="display:none">🗺️ Gráficos Filtrados por Data</h2>
+  <div class="grafico-container">
+    <img id="cluster_data" src="" alt="Cluster Data">
+    <img id="barras_data" src="" alt="Barras Data">
+  </div>
 
   <script>
     async function enviarDados() {
@@ -80,39 +99,58 @@
       });
 
       const json = await resp.json();
-      document.getElementById("saida").innerText = JSON.stringify(json, null, 2);
+      alert(json.mensagem || json.erro);
     }
 
-  async function rodarDBSCAN() {
-    // Mostra que está executando
-    document.getElementById("saida").style.display = "block";
-    document.getElementById("saida").innerText = "Executando DBSCAN...";
-
-    try {
+    async function rodarDBSCAN() {
+      mostrarSaida("Executando DBSCAN geral...");
       const resp = await fetch("/rodar_dbscan");
       const json = await resp.json();
+      atualizarSaida(json.saida || json.erro || "Sem retorno.");
+      atualizarGraficos("geral");
+    }
 
-      // Atualiza texto
-      document.getElementById("saida").innerText = json.saida || json.erro || "Sem retorno.";
+    async function rodarDBSCANporData() {
+      const data_ref = document.getElementById("data_filtro").value;
+      if (!data_ref) { alert("Escolha uma data!"); return; }
 
-      // Mostra título e imagem do cluster
-      document.getElementById("titulo_grafico").style.display = "block";
-      document.getElementById("grafico").style.display = "block";
-      document.getElementById("grafico").src = "/grafico?rand=" + Math.random();
+      mostrarSaida("Executando DBSCAN filtrado...");
+      const resp = await fetch("/rodar_dbscan_data", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data_ref })
+      });
+      const json = await resp.json();
+      atualizarSaida(json.saida || json.erro || "Sem retorno.");
+      atualizarGraficos("data");
+    }
 
-      // Mostra título e imagem do gráfico de barras
-      document.getElementById("titulo_barras").style.display = "block";
-      document.getElementById("grafico_barras").style.display = "block";
-      document.getElementById("grafico_barras").src = "/grafico_barras?rand=" + Math.random();
-
-      // Mostra título da saída
+    function mostrarSaida(texto) {
+      document.getElementById("saida").style.display = "block";
       document.getElementById("titulo_saida").style.display = "block";
+      document.getElementById("saida").innerText = texto;
+    }
 
-    } catch (error) {
-      document.getElementById("saida").innerText = "Erro ao rodar DBSCAN.";
-      console.error(error);
+    function atualizarSaida(texto) {
+      document.getElementById("saida").innerText = texto;
+    }
+
+    function atualizarGraficos(tipo) {
+      const cluster = document.getElementById("cluster_" + tipo);
+      const barras = document.getElementById("barras_" + tipo);
+
+      cluster.src = "/grafico/cluster_" + tipo + "?rand=" + Math.random();
+      barras.src = "/grafico/barras_" + tipo + "?rand=" + Math.random();
+
+      cluster.style.display = "block";
+      barras.style.display = "block";
+
+      if (tipo === "geral") {
+        document.getElementById("titulo_grafico_geral").style.display = "block";
+      } else {
+        document.getElementById("titulo_grafico_data").style.display = "block";
       }
-  }
+    }
   </script>
 </body>
 </html>
