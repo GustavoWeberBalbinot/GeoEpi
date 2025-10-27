@@ -9,6 +9,7 @@ BASE = os.path.dirname(__file__)
 CSV_PATH = os.path.join(BASE, "dados_pacientes.csv")
 DBSCAN_PATH = os.path.join(BASE, "dbscan.py")
 IMAGENS_PATH = os.path.join(BASE, "imagens")
+MAPA_PATH = os.path.join(BASE, "mapa_clusters.html")
 
 # cria CSV se não existir
 if not os.path.exists(CSV_PATH):
@@ -46,7 +47,7 @@ def rodar_dbscan():
 
 @app.route("/rodar_dbscan_data", methods=["POST"])
 def rodar_dbscan_data():
-    """Executa o DBSCAN com uma data fornecida pelo usuário"""
+    """Executa o DBSCAN filtrado por data"""
     data_ref = request.json.get("data_ref")
     if not data_ref:
         return jsonify({"erro": "Data não fornecida"}), 400
@@ -58,9 +59,11 @@ def rodar_dbscan_data():
             text=True,
             check=True
         )
+        # o dbscan.py salva o mapa automaticamente
         return jsonify({"saida": result.stdout})
     except subprocess.CalledProcessError as e:
         return jsonify({"erro": e.stderr}), 500
+
 
 
 @app.route("/grafico/<tipo>")
@@ -71,6 +74,16 @@ def grafico(tipo):
         return send_file(path, mimetype='image/png')
     else:
         return f"Gráfico {tipo} ainda não gerado", 404
+
+
+@app.route("/mapa")
+def exibir_mapa():
+    """Exibe o mapa interativo gerado pelo DBSCAN"""
+    if os.path.exists(MAPA_PATH):
+        return send_file(MAPA_PATH)
+    else:
+        return "Mapa ainda não gerado.", 404
+    
 
 
 if __name__ == "__main__":

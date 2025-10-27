@@ -79,6 +79,12 @@
     <img id="barras_data" src="" alt="Barras Data">
   </div>
 
+  <!-- Mapa -->
+  <div class="card" style="margin-top: 20px; text-align: center;">
+  <h3>Mapa Interativo</h3>
+    <iframe id="mapa_frame" src="" width="100%" height="500" style="border:1px solid #ccc; border-radius:10px; display:none;"></iframe>
+  </div>
+
   <script>
     async function enviarDados() {
       const dados = { 
@@ -122,8 +128,16 @@
       });
       const json = await resp.json();
       atualizarSaida(json.saida || json.erro || "Sem retorno.");
+
       atualizarGraficos("data");
+
+      // carregar o mapa atualizado
+      const mapa = document.getElementById("mapa_frame");
+      mapa.src = "/mapa?rand=" + Math.random(); // força reload
+      mapa.style.display = "block";
     }
+
+    
 
     function mostrarSaida(texto) {
       document.getElementById("saida").style.display = "block";

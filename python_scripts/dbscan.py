@@ -151,33 +151,38 @@ def detectar_surtos_por_data(df, data_ref, janela_dias=30):
 
 def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
     """
-    Gera mapa interativo com clusters.
+    Gera mapa interativo com clusters coloridos por doença.
     """
-    # Pega coordenadas médias para centralizar o mapa
+    cores_doencas = {
+    'Dengue': 'orange',
+    'COVID': 'red',
+    'Influenza': 'blue',
+    'Zika': 'green'
+    }
+    base_path = os.path.dirname(__file__)
+    caminho_arquivo = os.path.join(base_path, arquivo_saida)
+
     lat_media = df['local_lat'].mean()
     lon_media = df['local_lon'].mean()
     mapa = folium.Map(location=[lat_media, lon_media], zoom_start=12)
-    
-    # Cores para clusters (clusters -1 = ruído)
-    cores = ["red", "blue", "green", "orange", "purple", "pink", "brown", "gray"]
-    
+
     for _, row in df.iterrows():
-        cluster_id = row["cluster"]
-        cor = "lightgray" if cluster_id == -1 else cores[cluster_id % len(cores)]
-        
+        diagnostico = row["diagnostico"]
+        cor = cores_doencas.get(diagnostico, "gray")  # padrão cinza se não tiver na lista
+
         folium.Circle(
             location=[row['local_lat'], row['local_lon']],
-            radius=200,  # tamanho do círculo em metros
+            radius=200,
             color=cor,
             fill=True,
             fill_color=cor,
-            fill_opacity=0.4,  # transparência
-            popup=f"{row['diagnostico']} (Cluster {cluster_id})"
+            fill_opacity=0.4,
+            popup=f"{diagnostico} (Cluster {row['cluster']})"
         ).add_to(mapa)
-    
-    # Salvar HTML
-    mapa.save(arquivo_saida)
-    print(f"Mapa interativo salvo em {arquivo_saida}")
+
+    mapa.save(caminho_arquivo)
+    print(f"Mapa interativo salvo em {caminho_arquivo}")
+    return caminho_arquivo
 
 # ---------------------------
 # Execução principal
