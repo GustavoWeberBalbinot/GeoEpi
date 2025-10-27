@@ -1,44 +1,26 @@
+Baixando CSV da URL: https://docs.google.com/spreadsheets/d/1zjTLpMVEEB3WnaOqhPLi2goRdYxKcCgqupinR3oVddc/export?format=csv&gid=1927323556
+Download do CSV bem-sucedido. Processando dados...
+Salvando os dados formatados no arquivo: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\dados_pacientes.csv
+Arquivo CSV atualizado com sucesso: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\dados_pacientes.csv
+Baixando CSV da URL: https://docs.google.com/spreadsheets/d/1zjTLpMVEEB3WnaOqhPLi2goRdYxKcCgqupinR3oVddc/export?format=csv&gid=1927323556
+Download do CSV bem-sucedido. Processando dados...
+Salvando os dados formatados no arquivo: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\dados_pacientes.csv
+Arquivo CSV atualizado com sucesso: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\dados_pacientes.csv
 Clusters detectados (geral):
 diagnostico       data  local_lat  local_lon  cluster
-      COVID 2025-10-23   -23.6000   -46.7000       -1
-      COVID 2025-09-25   -23.5900   -46.6700        0
-      COVID 2025-09-26   -23.5910   -46.6712        0
-      COVID 2025-09-28   -23.5925   -46.6720        0
-      COVID 2025-08-10   -23.5905   -46.7005       -1
-      COVID 2025-11-26   -23.5900   -46.6700       -1
-     Dengue 2025-10-23   -23.5505   -46.6333        0
-     Dengue 2025-10-23   -23.5512   -46.6341        0
-     Dengue 2025-10-23   -23.5507   -46.6335        0
-     Dengue 2025-10-10   -23.5520   -46.6345        0
-     Dengue 2025-09-29   -23.5530   -46.6352        0
-     Dengue 2025-06-15   -23.5800   -46.6500       -1
-     Dengue 2025-11-03   -23.5518   -46.6338        0
-     Dengue 2025-10-01   -23.5505   -46.6333        0
-     Dengue 2025-10-05   -23.5505   -46.6333        0
-     Dengue 2025-11-01   -23.5505   -46.6333        0
-     Dengue 2025-11-15   -23.5505   -46.6333        0
-     Dengue 2025-03-25   -23.5505   -46.6333       -1
-     Dengue 2025-09-10   -23.5620   -46.6390        0
-  Influenza 2025-10-05   -23.5610   -46.6400        0
-  Influenza 2025-10-07   -23.5620   -46.6390        0
-  Influenza 2025-09-09   -23.5635   -46.6415        0
-Rodando DBSCAN para a data: 2025-09-09
+      COVID 2025-10-27   -26.3212   -48.8456        0
+      COVID 2025-10-27   -26.3190   -48.8727        0
+     Dengue 2025-10-27   -26.3039   -48.8741        0
+     Dengue 2025-10-27   -26.3039   -48.8741        0
 
-Surtos detectados em torno de 2025-09-09:
+Surtos detectados em torno de 2025-10-10:
  cluster diagnostico       data  local_lat  local_lon
-       0       COVID 2025-09-25   -23.5900   -46.6700
-       0       COVID 2025-09-26   -23.5910   -46.6712
-       0       COVID 2025-09-28   -23.5925   -46.6720
-      -1       COVID 2025-08-10   -23.5905   -46.7005
-       0      Dengue 2025-09-29   -23.5530   -46.6352
-       0      Dengue 2025-10-01   -23.5505   -46.6333
-       0      Dengue 2025-10-05   -23.5505   -46.6333
-       0      Dengue 2025-09-10   -23.5620   -46.6390
-       0   Influenza 2025-10-05   -23.5610   -46.6400
-       0   Influenza 2025-10-07   -23.5620   -46.6390
-       0   Influenza 2025-09-09   -23.5635   -46.6415
+       0       COVID 2025-10-27   -26.3212   -48.8456
+       0       COVID 2025-10-27   -26.3190   -48.8727
+       0      Dengue 2025-10-27   -26.3039   -48.8741
+       0      Dengue 2025-10-27   -26.3039   -48.8741
 
 Gráficos salvos em: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\imagens
 Mapa interativo salvo em D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\mapa_clusters.html
-Gerando mapa apenas com clusters válidos (17 pontos)...
+Gerando mapa apenas com clusters válidos (4 pontos)...
 Mapa interativo salvo em D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\mapa_clusters_validos.html

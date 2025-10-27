@@ -13,17 +13,23 @@
   <a href="/">Voltar</a>
 
   <div id="saida"></div>
-  <img id="barras_geral" style="max-width:90%">
-  <img id="barras_data" style="max-width:90%">
+
+  <!-- Aqui as imagens estarão sempre visíveis -->
+  <div id="imagens">
+    <img id="barras_geral" style="max-width:90%">
+    <img id="barras_data" style="max-width:90%">
+  </div>
 
   <script>
+    // Função para rodar o DBSCAN geral
     async function rodarDBSCAN() {
       const resp = await fetch("/rodar_dbscan");
       const json = await resp.json();
-      document.getElementById("saida").innerText = json.saida || json.erro || "Concluido.";
-      atualizarGraficos("geral");
+      document.getElementById("saida").innerText = json.saida || json.erro || "Concluído.";
+      atualizarGraficos();  // Atualiza ambas as imagens
     }
 
+    // Função para rodar o DBSCAN por data
     async function rodarDBSCANporData() {
       const data_ref = document.getElementById("data_filtro").value;
       if (!data_ref) return alert("Escolha uma data!");
@@ -33,15 +39,49 @@
         body: JSON.stringify({ data_ref })
       });
       const json = await resp.json();
-      document.getElementById("saida").innerText = json.saida || json.erro || "Concluido";
-      atualizarGraficos("data");
+      document.getElementById("saida").innerText = json.saida || json.erro || "Concluído";
+      atualizarGraficos();  // Atualiza ambas as imagens
     }
 
-    function atualizarGraficos(tipo) {
-      const img = document.getElementById("barras_" + tipo);
-      img.src = "/grafico/barras_" + tipo + "?rand=" + Math.random();
-      img.style.display = "block";
+    // Função para atualizar as imagens
+    function atualizarGraficos() {
+      // Atualiza a imagem de barras_geral
+      const imgGeral = document.getElementById("barras_geral");
+      imgGeral.src = "/grafico/barras_geral?rand=" + Math.random();  // Força a atualização
+      imgGeral.style.display = "block";  // Garante que a imagem seja visível
+
+      // Atualiza a imagem de barras_data
+      const imgData = document.getElementById("barras_data");
+      imgData.src = "/grafico/barras_data?rand=" + Math.random();  // Força a atualização
+      imgData.style.display = "block";  // Garante que a imagem seja visível
     }
+
+    // Função para verificar se as imagens precisam ser atualizadas
+    function verificarNovosGraficos() {
+      setInterval(async () => {
+        try {
+          // Verifica se os gráficos foram gerados
+          const respGeral = await fetch("/grafico/barras_geral");
+          const respData = await fetch("/grafico/barras_data");
+
+          // Se ambos os gráficos estão disponíveis, atualiza as imagens
+          if (respGeral.ok && respData.ok) {
+            atualizarGraficos(); // Atualiza as imagens a cada 1 minuto
+          }
+        } catch (error) {
+          console.error("Erro ao verificar novos gráficos:", error);
+        }
+      }, 60000);  // Checa a cada 60 segundos (1 minuto)
+    }
+
+    // Inicia o monitoramento dos gráficos assim que a página carrega
+    window.onload = () => {
+      // Inicializa o monitoramento para os gráficos
+      verificarNovosGraficos();
+
+      // Faz a primeira atualização manualmente ao carregar a página
+      atualizarGraficos();
+    };
   </script>
 </body>
 </html>

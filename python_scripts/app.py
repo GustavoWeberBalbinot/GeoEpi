@@ -2,6 +2,8 @@ from flask import Flask, request, render_template, jsonify, send_file, Response
 import pandas as pd
 import subprocess
 import os
+import time
+import threading
 
 app = Flask(__name__)
 
@@ -17,6 +19,25 @@ LOG_FILE = "saida_python.log"
 # cria CSV se não existir
 if not os.path.exists(CSV_PATH):
     pd.DataFrame(columns=["idade","genero","peso","altura","local_lat","local_lon","data","diagnostico"]).to_csv(CSV_PATH, index=False)
+
+
+def rodar_main_periodicamente():
+    """Executa o main.py a cada 1 minuto"""
+    while True:
+        try:
+            result = subprocess.run(["python", MAIN_PATH],
+                                    capture_output=True,
+                                    text=True,
+                                    check=True)
+            print("main.py executado com sucesso:", result.stdout)
+        except subprocess.CalledProcessError as e:
+            print("Erro ao executar main.py:", e.stderr)
+        time.sleep(60)  # Espera 1 minuto antes de rodar novamente
+
+# Inicia a execução periódica do main.py em uma thread separada
+thread = threading.Thread(target=rodar_main_periodicamente, daemon=True)
+thread.start()
+
 
 
 @app.route("/")

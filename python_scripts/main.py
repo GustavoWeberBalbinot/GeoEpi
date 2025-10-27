@@ -1,6 +1,6 @@
 from gerar_imagens import gerar_graficos, gerar_mapa_clusters, gerar_mapa_clusters_validos
 from dbscan import detectar_clusters, detectar_surtos_por_data
-from coleta_dados_google import baixar_csv
+from coleta_dados_google import baixar_e_formatar_csv
 import os
 import pandas as pd
 import sys
@@ -24,6 +24,7 @@ df["data"] = pd.to_datetime(df["data"], errors="coerce")
 df = df.dropna(subset=["data", "local_lat", "local_lon"])  # remove linhas inválidas
 
 if __name__ == "__main__":
+    baixar_e_formatar_csv()
     # 1️⃣ Clusters gerais
     df_geral = detectar_clusters(df)
     print("Clusters detectados (geral):")
