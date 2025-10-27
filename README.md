@@ -18,6 +18,8 @@ To do:
 Arrumar o mapa para que cluster -1 Não apareça talvez, ou fazer um para TUDO. 
 Possibilidade de ativar ou desativar o cluster -1. através de 2 html?
 
+colocar uma entrada para definir EPS E MIN_SAMPLE
+
 Fazer o mapa
 Geral
 
