@@ -97,6 +97,7 @@ def grafico(tipo):
     else:
         return f"Gráfico {tipo} ainda não gerado", 404
 
+#Rotas do mapa
 
 @app.route("/mapa")
 def exibir_mapa():
@@ -105,6 +106,16 @@ def exibir_mapa():
         return send_file(MAPA_PATH)
     else:
         return "Mapa ainda não gerado.", 404
+
+
+@app.route("/mapa_validos")
+def exibir_mapa_validos():
+    """Exibe o mapa interativo apenas com clusters válidos"""
+    path = os.path.join(BASE, "mapa_clusters_validos.html")
+    if os.path.exists(path):
+        return send_file(path)
+    else:
+        return "Mapa de clusters válidos ainda não gerado.", 404
 
 
 @app.route("/saida_python")

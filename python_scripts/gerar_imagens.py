@@ -1,8 +1,3 @@
-import pandas as pd
-import numpy as np
-from sklearn.cluster import DBSCAN
-from haversine import haversine
-from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 import folium
 import os
@@ -129,3 +124,18 @@ def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
     mapa.save(caminho_arquivo)
     print(f"Mapa interativo salvo em {caminho_arquivo}")
     return caminho_arquivo
+
+
+# ---------------------------
+# Função para gerar mapa de clusters válidos
+# ---------------------------
+def gerar_mapa_clusters_validos(df, arquivo_saida="mapa_clusters_validos.html"):
+    """
+    Gera um mapa apenas com clusters válidos (exclui ruído, cluster = -1)
+    """
+    df_validos = df[df["cluster"] != -1].copy()
+    if not df_validos.empty:
+        print(f"Gerando mapa apenas com clusters válidos ({len(df_validos)} pontos)...")
+        gerar_mapa_clusters(df_validos, arquivo_saida=arquivo_saida)
+    else:
+        print("Nenhum cluster válido encontrado para gerar o mapa.")

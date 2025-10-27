@@ -1,8 +1,10 @@
-from gerar_imagens import gerar_graficos, gerar_mapa_clusters
+from gerar_imagens import gerar_graficos, gerar_mapa_clusters, gerar_mapa_clusters_validos
 from dbscan import detectar_clusters, detectar_surtos_por_data
+from coleta_dados_google import baixar_csv
 import os
 import pandas as pd
 import sys
+import datetime
 
 
 # ---------------------------
@@ -47,3 +49,4 @@ if __name__ == "__main__":
 
     # Gerar mapa interativo
     gerar_mapa_clusters(df_geral, arquivo_saida="mapa_clusters.html")
+    gerar_mapa_clusters_validos(df_geral, arquivo_saida="mapa_clusters_validos.html")
