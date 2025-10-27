@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Clusters - DBSCAN</title>
+</head>
+<body>
+  <h1>🧬 Gráficos de Cluster</h1>
+  <input type="date" id="data_filtro">
+  <button onclick="rodarDBSCAN()">Rodar DBSCAN Geral</button>
+  <button onclick="rodarDBSCANporData()">Rodar DBSCAN por Data</button>
+
+  <div id="saida"></div>
+  <img id="cluster_geral" style="display:none; max-width:90%">
+  <img id="cluster_data" style="display:none; max-width:90%">
+
+  <script>
+    async function rodarDBSCAN() {
+      const resp = await fetch("/rodar_dbscan");
+      const json = await resp.json();
+      document.getElementById("saida").innerText = json.saida || json.erro || "Concluido.";
+      atualizarGraficos("geral");
+    }
+
+    async function rodarDBSCANporData() {
+      const data_ref = document.getElementById("data_filtro").value;
+      if (!data_ref) return alert("Escolha uma data!");
+      const resp = await fetch("/rodar_dbscan_data", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data_ref })
+      });
+      const json = await resp.json();
+      document.getElementById("saida").innerText = json.saida || json.erro || "Concluido.";
+      atualizarGraficos("data");
+    }
+
+    function atualizarGraficos(tipo) {
+      const img = document.getElementById("cluster_" + tipo);
+      img.src = "/grafico/cluster_" + tipo + "?rand=" + Math.random();
+      img.style.display = "block";
+    }
+  </script>
+</body>
+</html>

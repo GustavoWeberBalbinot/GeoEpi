@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Mapa de Clusters</title>
+</head>
+<body>
+  <h1>🗺️ Mapa de Clusters</h1>
+  <input type="date" id="data_filtro">
+  <button onclick="rodarDBSCAN()">Rodar DBSCAN Geral</button>
+  <button onclick="rodarDBSCANporData()">Rodar DBSCAN por Data</button>
+
+  <div id="saida"></div>
+  <iframe id="mapa" width="100%" height="500" style="display:none; border:1px solid #ccc; border-radius:8px;"></iframe>
+
+  <script>
+    async function rodarDBSCAN() {
+      const resp = await fetch("/rodar_dbscan");
+      const json = await resp.json();
+      document.getElementById("saida").innerText = json.saida || json.erro || "Concluido.";
+      atualizarMapa();
+    }
+
+    async function rodarDBSCANporData() {
+      const data_ref = document.getElementById("data_filtro").value;
+      if (!data_ref) return alert("Escolha uma data!");
+      const resp = await fetch("/rodar_dbscan_data", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data_ref })
+      });
+      const json = await resp.json();
+      document.getElementById("saida").innerText = json.saida || json.erro || "Concluido.";
+      atualizarMapa();
+    }
+
+    function atualizarMapa() {
+      const iframe = document.getElementById("mapa");
+      iframe.src = "/mapa?rand=" + Math.random();
+      iframe.style.display = "block";
+    }
+  </script>
+</body>
+</html>

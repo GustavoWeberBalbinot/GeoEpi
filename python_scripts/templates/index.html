@@ -52,6 +52,18 @@
     <button onclick="enviarDados()">📥 Enviar Dados</button>
     <button onclick="rodarDBSCAN()">⚙️ Rodar DBSCAN Geral</button>
   </div>
+  <h1>📊 Painel de Controle</h1>
+
+  <hr>
+
+  <nav>
+    <ul>
+      <li><a href="/barras">Gráficos de Barras</a></li>
+      <li><a href="/bolinhas">Gráficos de Clusters</a></li>
+      <li><a href="/mapa">Mapa Interativo</a></li>
+      <li><a href="/pythonsaida">Saida de Dados</a></li>
+    </ul>
+  </nav>
 
   <hr>
 
@@ -112,7 +124,7 @@
       mostrarSaida("Executando DBSCAN geral...");
       const resp = await fetch("/rodar_dbscan");
       const json = await resp.json();
-      atualizarSaida(json.saida || json.erro || "Sem retorno.");
+      atualizarSaida(json.saida || json.erro || "Concluido.");
       atualizarGraficos("geral");
     }
 

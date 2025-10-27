@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify, send_file
+from flask import Flask, request, render_template, jsonify, send_file, Response
 import pandas as pd
 import subprocess
 import os
@@ -10,6 +10,9 @@ CSV_PATH = os.path.join(BASE, "dados_pacientes.csv")
 DBSCAN_PATH = os.path.join(BASE, "dbscan.py")
 IMAGENS_PATH = os.path.join(BASE, "imagens")
 MAPA_PATH = os.path.join(BASE, "mapa_clusters.html")
+BOLINHAS_PATH = os.path.join(BASE, "bolinhas.html")
+LOG_FILE = "saida_python.log"
+
 
 # cria CSV se não existir
 if not os.path.exists(CSV_PATH):
@@ -20,6 +23,25 @@ if not os.path.exists(CSV_PATH):
 def home():
     return render_template("index.html")
 
+
+@app.route("/barras")
+def barras():
+    return render_template("barras.html")
+
+
+@app.route("/bolinhas")
+def cluster():
+    return render_template("bolinhas.html")
+
+
+@app.route("/pythonsaida")
+def pagina_saida_python():
+    return render_template("pythonsaida.html")
+
+
+@app.route("/dados")
+def dados():
+    return render_template("dados.html")
 
 @app.route("/enviar_dados", methods=["POST"])
 def enviar_dados():
@@ -83,8 +105,16 @@ def exibir_mapa():
         return send_file(MAPA_PATH)
     else:
         return "Mapa ainda não gerado.", 404
-    
 
+
+@app.route("/saida_python")
+def saida_python():
+    try:
+        with open(LOG_FILE, "r", encoding="utf-8") as f:
+            conteudo = f.read()
+        return Response(conteudo, mimetype="text/plain")
+    except FileNotFoundError:
+        return Response("Nenhuma saída registrada ainda.", mimetype="text/plain")
 
 if __name__ == "__main__":
     app.run(debug=True)

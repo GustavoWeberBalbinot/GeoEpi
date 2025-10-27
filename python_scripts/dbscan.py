@@ -6,6 +6,16 @@ from datetime import datetime, timedelta
 import matplotlib.pyplot as plt
 import folium
 import os
+import sys
+
+
+# ---------------------------
+# Salvar Logs
+# ---------------------------
+
+LOG_FILE = "saida_python.log"
+sys.stdout = open(LOG_FILE, "w", encoding="utf-8")  # redireciona prints para o arquivo
+
 
 # ---------------------------
 # Caminhos
@@ -198,13 +208,17 @@ if __name__ == "__main__":
     gerar_graficos(df_geral, tipo="geral")
 
     # 3️⃣ Clusters e gráficos por data
-    data_exemplo = "2025-10-10"
-    df_data = detectar_surtos_por_data(df, data_exemplo)
+    if len(sys.argv) > 1:
+        data_ref = sys.argv[1]
+        print(f"Rodando DBSCAN para a data: {data_ref}")
+    else:
+        data_ref = '2025-10-10'
+    df_data = detectar_surtos_por_data(df, data_ref)
     if not df_data.empty:
-        print(f"\nSurtos detectados em torno de {data_exemplo}:")
+        print(f"\nSurtos detectados em torno de {data_ref}:")
         print(df_data[["cluster", "diagnostico", "data", "local_lat", "local_lon"]]
               .to_string(index=False))  # índice removido
-        gerar_graficos(df_data, subset=df_data, tipo="data", data_ref=pd.to_datetime(data_exemplo))
+        gerar_graficos(df_data, subset=df_data, tipo="data", data_ref=pd.to_datetime(data_ref))
     print(f"\nGráficos salvos em: {imagens_path}")
 
     # Gerar mapa interativo

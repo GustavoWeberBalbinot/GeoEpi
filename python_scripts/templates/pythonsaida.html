@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saída do Python</title>
+  <style>
+    body {
+      font-family: "Consolas", monospace;
+      background-color: #1e1e1e;
+      color: #dcdcdc;
+      padding: 20px;
+    }
+    h1 {
+      color: #00ffcc;
+    }
+    pre {
+      background: #2b2b2b;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      background: #00ffcc;
+      color: #1e1e1e;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00d4aa;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧠 Saída do Python</h1>
+  <p>Veja abaixo o log completo da execução do DBSCAN:</p>
+
+  <pre id="saida">Carregando saída...</pre>
+  <button onclick="atualizarSaida()">🔄 Atualizar</button>
+
+  <script>
+    async function atualizarSaida() {
+      try {
+        const resp = await fetch("/saida_python");
+        const texto = await resp.text();
+        document.getElementById("saida").innerText = texto || "Sem saída disponível.";
+      } catch (err) {
+        document.getElementById("saida").innerText = "Erro ao carregar saída do Python.";
+      }
+    }
+
+    // Atualiza automaticamente ao abrir
+    atualizarSaida();
+  </script>
+</body>
+</html>
