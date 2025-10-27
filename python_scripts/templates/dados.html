@@ -50,7 +50,47 @@
 
     <br>
     <button onclick="enviarDados()">📥 Enviar Dados</button>
-    <button onclick="rodarDBSCAN()">⚙️ Rodar DBSCAN Geral</button>
+
+    <a href="/">Voltar</a>
+
   </div>
+  <script>
+    async function enviarDados() {
+      const dados = { 
+        idade: parseInt(document.getElementById("idade").value),
+        genero: document.getElementById("genero").value,
+        peso: parseFloat(document.getElementById("peso").value),
+        altura: parseFloat(document.getElementById("altura").value),
+        local_lat: parseFloat(document.getElementById("lat").value),
+        local_lon: parseFloat(document.getElementById("lon").value),
+        data: document.getElementById("data").value,
+        diagnostico: document.getElementById("diagnostico").value
+      };
+
+      const resp = await fetch("/enviar_dados", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados)
+      });
+
+      const json = await resp.json();
+      alert(json.mensagem || json.erro);
+
+      // Limpar os campos após o envio
+      limparCampos();
+    }
+
+    function limparCampos() {
+      document.getElementById("idade").value = '';
+      document.getElementById("genero").value = 'M';
+      document.getElementById("peso").value = '';
+      document.getElementById("altura").value = '';
+      document.getElementById("lat").value = '';
+      document.getElementById("lon").value = '';
+      document.getElementById("data").value = '';
+      document.getElementById("diagnostico").value = '';
+    }
+  </script>
+
 </body>
 </html>

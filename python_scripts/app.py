@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 BASE = os.path.dirname(__file__)
 CSV_PATH = os.path.join(BASE, "dados_pacientes.csv")
-DBSCAN_PATH = os.path.join(BASE, "dbscan.py")
+MAIN_PATH = os.path.join(BASE, "main.py")
 IMAGENS_PATH = os.path.join(BASE, "imagens")
 MAPA_PATH = os.path.join(BASE, "mapa_clusters.html")
 BOLINHAS_PATH = os.path.join(BASE, "bolinhas.html")
@@ -58,7 +58,7 @@ def enviar_dados():
 @app.route("/rodar_dbscan", methods=["GET"])
 def rodar_dbscan():
     try:
-        result = subprocess.run(["python", DBSCAN_PATH],
+        result = subprocess.run(["python", MAIN_PATH],
                                 capture_output=True,
                                 text=True,
                                 check=True)
@@ -76,7 +76,7 @@ def rodar_dbscan_data():
 
     try:
         result = subprocess.run(
-            ["python", DBSCAN_PATH, data_ref],
+            ["python", MAIN_PATH, data_ref],
             capture_output=True,
             text=True,
             check=True
