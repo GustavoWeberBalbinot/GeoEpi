@@ -8,19 +8,21 @@ Salvando os dados formatados no arquivo: D:\Gustavo\GitHubRepositores\GeoEpi\pyt
 Arquivo CSV atualizado com sucesso: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\dados_pacientes.csv
 Clusters detectados (geral):
 diagnostico       data  local_lat  local_lon  cluster
-      COVID 2025-10-27   -26.3212   -48.8456        0
-      COVID 2025-10-27   -26.3190   -48.8727        0
-     Dengue 2025-10-27   -26.3039   -48.8741        0
-     Dengue 2025-10-27   -26.3039   -48.8741        0
+      COVID 2025-10-28   -26.3212   -48.8456        0
+      COVID 2025-10-28   -26.3190   -48.8727        0
+     Dengue 2025-10-28   -26.3039   -48.8741        0
+     Dengue 2025-10-28   -26.3039   -48.8741        0
+  Influenza 2025-10-28   -26.3212   -48.8456        0
 
 Surtos detectados em torno de 2025-10-10:
  cluster diagnostico       data  local_lat  local_lon
-       0       COVID 2025-10-27   -26.3212   -48.8456
-       0       COVID 2025-10-27   -26.3190   -48.8727
-       0      Dengue 2025-10-27   -26.3039   -48.8741
-       0      Dengue 2025-10-27   -26.3039   -48.8741
+       0       COVID 2025-10-28   -26.3212   -48.8456
+       0       COVID 2025-10-28   -26.3190   -48.8727
+       0      Dengue 2025-10-28   -26.3039   -48.8741
+       0      Dengue 2025-10-28   -26.3039   -48.8741
+       0   Influenza 2025-10-28   -26.3212   -48.8456
 
 Gráficos salvos em: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\imagens
 Mapa interativo salvo em D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\mapa_clusters.html
-Gerando mapa apenas com clusters válidos (4 pontos)...
+Gerando mapa apenas com clusters válidos (5 pontos)...
 Mapa interativo salvo em D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\mapa_clusters_validos.html

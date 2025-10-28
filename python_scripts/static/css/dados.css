@@ -1,0 +1,85 @@
+/* Container principal */
+div {
+  width: 380px;
+  margin: 60px auto;
+  padding: 30px 35px;
+  background: rgb(179, 197, 207);
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+  transition: transform 0.3s ease;
+}
+
+/* Rótulos */
+label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: #2d3436;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* Campos de entrada e seleção */
+input,
+select {
+  width: 94%;
+  padding: 12px 14px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 15px;
+  background: #bdbdec;
+  font-size: 14px;
+  color: #333;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+
+/* Botão de enviar */
+button {
+  width: 100%;
+  background: linear-gradient(135deg, #007bff, #0056d8);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 25px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+  transition: background 0.3s, transform 0.15s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0056d8, #003caa);
+  transform: scale(1.03);
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Link "Voltar" */
+a {
+  display: inline-block;
+  margin-top: 18px;
+  text-align: center;
+  width: 100%;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+a:hover {
+  color: #004b9b;
+  transform: scale(1.05);
+}
+
+/* Ícone dentro do botão (📥) */
+button::before {
+  margin-right: 6px;
+}

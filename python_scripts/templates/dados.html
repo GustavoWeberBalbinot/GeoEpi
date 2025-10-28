@@ -4,17 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dados</title>
-    <style>
-    body { font-family: Arial, sans-serif; background: #f6f6f6; padding: 20px; }
-    h1 { color: #333; }
-    label { display: block; margin: 8px 0 4px; }
-    input, select { padding: 6px; width: 200px; }
-    button { margin-top: 10px; padding: 8px 12px; border: none; background: #0078D7; color: white; border-radius: 4px; cursor: pointer; }
-    button:hover { background: #005fa3; }
-    #saida { background: white; padding: 10px; border-radius: 5px; margin-top: 15px; white-space: pre-wrap; display:none; }
-    img { margin-top: 15px; max-width: 90%; border: 1px solid #ccc; border-radius: 5px; display:none; }
-    .grafico-container { margin-top: 10px; }
-  </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dados.css') }}">
 </head>
 <body>
     <h1>📊 DBSCAN - Sistema de Análise Epidemiológica</h1>
@@ -51,7 +41,7 @@
     <br>
     <button onclick="enviarDados()">📥 Enviar Dados</button>
 
-    <a href="/">Voltar</a>
+    <a href="/main">Voltar</a>
 
   </div>
   <script>

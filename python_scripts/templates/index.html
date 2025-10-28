@@ -3,33 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DBSCAN - Sistema de Análise Epidemiológica</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f6f6f6; padding: 20px; }
-    h1 { color: #333; }
-    label { display: block; margin: 8px 0 4px; }
-    input, select { padding: 6px; width: 200px; }
-    button { margin-top: 10px; padding: 8px 12px; border: none; background: #0078D7; color: white; border-radius: 4px; cursor: pointer; }
-    button:hover { background: #005fa3; }
-    #saida { background: white; padding: 10px; border-radius: 5px; margin-top: 15px; white-space: pre-wrap; display:none; }
-    img { margin-top: 15px; max-width: 90%; border: 1px solid #ccc; border-radius: 5px; display:none; }
-    .grafico-container { margin-top: 10px; }
-  </style>
+  <title>Tela de Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-  <h1>📊 Painel de Controle</h1>
+  <div class="login-container">
+    <h2>Entrar</h2>
+    <form id="loginForm">
+      <div class="input-field">
+        <label for="login"></label>
+        <input type="text" id="login" placeholder="Login" required>
+      </div>
+      <div class="input-field">
+        <label for="password"></label>
+        <input type="password" id="password" placeholder="Senha" required>
+      </div>
+      <button type="submit" class="login-btn">Entrar</button>
+      <p id="errorMsg" class="error-message">Login ou senha incorretos!</p>
+    </form>
+  </div>
 
-  <hr>
+  <script>
+    // Login e senha corretos
+    const loginCorreto = "admin";
+    const senhaCorreta = "1234";
 
-  <nav>
-    <ul>
-      <li><a href="/barras">Gráficos de Barras</a></li>
-      <li><a href="/bolinhas">Gráficos de Clusters</a></li>
-      <li><a href="/mapa">Mapa Interativo com Ruidos</a></li>
-      <li><a href="/mapa_validos">Mapa Interativo Apenas Válidos</a></li>
-      <li><a href="/pythonsaida">Saida de Dados</a></li>
-      <li><a href="/dados">Entrada de Dados</a></li>
-    </ul>
-  </nav>
+    // Captura o formulário
+    const form = document.getElementById("loginForm");
+    const erro = document.getElementById("errorMsg");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault(); // impede o envio automático
+
+      const login = document.getElementById("login").value;
+      const senha = document.getElementById("password").value;
+
+      // Verifica login e senha
+      if (login === loginCorreto && senha === senhaCorreta) {
+        // Redireciona para outra página
+        window.location.href = "/main";
+      } else {
+        // Mostra mensagem de erro
+        erro.style.display = "block";
+      }
+    });
+  </script>
 </body>
 </html>

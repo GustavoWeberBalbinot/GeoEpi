@@ -32,7 +32,7 @@ def distancia_hibrida(coords, datas, peso_tempo=1/30):
 # ---------------------------
 # Função DBSCAN
 # ---------------------------
-def detectar_clusters(df, eps_km=5, min_samples=6):
+def detectar_clusters(df, eps_km=5, min_samples=1):
     resultados = []
     for doenca, grupo in df.groupby("diagnostico"):
         if grupo.empty:

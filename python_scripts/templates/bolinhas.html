@@ -3,27 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <title>Clusters - DBSCAN</title>
+  <link rel="stylesheet" href="../static/css/bolinhas.css" type="text/css">
 </head>
 <body>
   <h1>🧬 Gráficos de Cluster</h1>
-  <input type="date" id="data_filtro">
-  <button onclick="rodarDBSCAN()">Rodar DBSCAN Geral</button>
-  <button onclick="rodarDBSCANporData()">Rodar DBSCAN por Data</button>
 
-  <a href="/">Voltar</a>
+  <div class="container">
+    <div class="top">
+      <input type="date" id="data_filtro">
+    </div>
+
+    <div class="content">
+      <!-- Seção da esquerda -->
+      <div class="left-section">
+        <button onclick="rodarDBSCAN()">Rodar DBSCAN Geral</button>
+        <div class="left-box">
+          <div id="saida"></div>
+          <img id="cluster_geral" style="display:none;">
+        </div>
+      </div>
+
+      <!-- Seção da direita -->
+      <div class="right-section">
+        <button onclick="rodarDBSCANporData()">Rodar DBSCAN por Data</button>
+        <div class="right-box">
+          <img id="cluster_data" style="display:none;">
+        </div>
+      </div>
+    </div>
+    <a href="/main">Voltar</a>
+  </div>
+
   
-  <div id="saida"></div>
-  <img id="cluster_geral" style="max-width:90%">
-  <img id="cluster_data" style="max-width:90%">
 
   <script>
+    // Roda o DBSCAN geral
     async function rodarDBSCAN() {
       const resp = await fetch("/rodar_dbscan");
       const json = await resp.json();
-      document.getElementById("saida").innerText = json.saida || json.erro || "Concluido.";
+      document.getElementById("saida").innerText = json.saida || json.erro || "Concluído.";
       atualizarGraficos("geral");
     }
 
+    // Roda o DBSCAN filtrado por data
     async function rodarDBSCANporData() {
       const data_ref = document.getElementById("data_filtro").value;
       if (!data_ref) return alert("Escolha uma data!");
@@ -33,15 +55,32 @@
         body: JSON.stringify({ data_ref })
       });
       const json = await resp.json();
-      document.getElementById("saida").innerText = json.saida || json.erro || "Concluido.";
+      document.getElementById("saida").innerText = json.saida || json.erro || "Concluído.";
       atualizarGraficos("data");
     }
 
+    // Atualiza a imagem de um tipo de gráfico
     function atualizarGraficos(tipo) {
       const img = document.getElementById("cluster_" + tipo);
-      img.src = "/grafico/cluster_" + tipo + "?rand=" + Math.random();
+      img.src = "/grafico/cluster_" + tipo + "?rand=" + Math.random(); // força atualização
       img.style.display = "block";
     }
+
+    // Atualiza automaticamente os gráficos a cada 1 minuto
+    function atualizarAutomaticamente() {
+      setInterval(() => {
+        console.log("🔄 Atualizando gráficos automaticamente...");
+        atualizarGraficos("geral");
+        atualizarGraficos("data");
+      }, 60000); // 60 segundos
+    }
+
+    // Inicialização ao carregar a página
+    window.onload = () => {
+      atualizarGraficos("geral");
+      atualizarGraficos("data");
+      atualizarAutomaticamente();
+    };
   </script>
 </body>
 </html>

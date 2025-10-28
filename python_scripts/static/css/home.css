@@ -1,0 +1,245 @@
+  * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      background-color: #f3f4f6;
+    }
+
+/* --- MENU LATERAL FIXO --- */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  left: 0; /* sempre visível */
+  width: 20%;
+  height: 100vh;
+  background-color: #a8bec9;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  z-index: 10;
+}
+
+/* parte de cima do menu */
+.menu-topo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* imagem redonda */
+.menu-foto {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+ 
+}
+
+/* botões centrais */
+.menu-botao, .menu-rodape {
+  width: 70%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4f46e5;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 10px;
+  text-decoration: none;       
+  text-align: center;          
+  font-weight: bold; 
+  font-size: 14px;
+}
+
+.menu-botao:hover, .menu-rodape:hover {
+  background-color: #3730a3;
+}
+
+/* botão inferior */
+.menu-rodape {
+  align-self: center;
+}
+
+    /* Conteúdo principal */
+    .main-content {
+      margin-left: 20%; /* espaço da sidebar */
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .navbar {
+      width: 100%;
+      height: 60px;
+      background-color: #f3f4f6;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      color: white;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* Botões */
+    .nav-btn {
+      background-color: white;
+      color: #4f46e5;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px; /* espaço entre o ícone e o texto */
+    }
+
+    .nav-btn:hover {
+      background-color: #e0e7ff;
+      transform: scale(1.05);
+    }
+
+    /* Ícone de três linhas dentro do botão */
+    .menu-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 18px;
+      height: 12px;
+    }
+
+    .menu-icon span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: #4f46e5;
+      border-radius: 2px;
+    }
+
+    .dia-atual {
+      font-weight: 600;
+      font-size: 14px;
+      color: #4f46e5;
+    }
+
+
+
+    /* Área central com duas divs + uma à direita */
+    .content {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 20px;
+      gap: 20px;
+    }
+
+   .center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* menor distância entre as divs */
+  width: 100%;
+  align-items: center;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 50%;        /* diminui a largura */
+  padding: 15px;      /* menos espaço interno */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-box {
+  width: auto;
+  height: 80px;      /* reduz a altura da imagem */
+  max-width: 100%;
+  object-fit: contain;
+  margin: 10px 0;     /* espaçamento menor entre imagem e botões */
+}
+
+.btn {
+  padding: 8px 18px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.btn:hover {
+  border: 2px solid #4f46e5;
+  background-color: white;
+  color: #4f46e5;
+  transform: scale(1.05);
+}
+
+
+    /* Div da direita */
+    .right-box {
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      width: 25%;
+      height: 700px;
+      margin-right: 5%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column; /* empilha os elementos verticalmente */
+      align-items: center;    /* centraliza horizontalmente */
+    }
+
+    /* Ajuste simples de cores */
+    .navbar h1 {
+      color: #333;
+      font-size: 20px;
+    }
+
+    
+    .mapa-btn {
+      padding: 10px;
+      background-color: #c4baba;
+      margin-top: 15px;
+      color: #555;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.5s;
+      text-decoration: none;       
+      text-align: center;          
+      font-weight: bold; 
+      font-size: 16px;
+    }
+
+
+    .mapa-btn:hover {
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+      transform: scale(1.05); 
+    }
+
+
+

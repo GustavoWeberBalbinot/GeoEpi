@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+<!-- MENU LATERAL FIXO -->
+<div class="menu-lateral">
+  <div class="menu-topo">
+    <img src="{{ url_for('static', filename='imagens_main/icone_foto.png') }}" alt="Foto de perfil" class="menu-foto">
+    <button class="menu-botao">Geral</button>
+    <button class="menu-botao">Específico</button>
+    <a href="/dados" class="menu-botao">Inserir Dados</a>
+    <a href="/pythonsaida" class="menu-botao">Saida Python</a>
+
+  </div>
+  
+  <button class="menu-rodape">Alertar</button>
+</div>
+
+
+  <div class="main-content">
+<nav class="navbar">
+  <div class="nav-left">
+    <button class="nav-btn filtro-btn">
+      <div class="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      Filtros
+    </button>
+
+    <button class="nav-btn">Previsões</button>
+  </div>
+
+  <div class="nav-right">
+    <span class="dia-atual">29/10/2025</span>
+    <button class="nav-btn">Mudar Dia</button>
+  </div>
+</nav>
+
+
+
+
+    <div class="content">
+      <div class="center">
+        <div class="box">
+          <button type="submit" class="mapa-btn">Cluster De Doenças</button>
+          <img src="{{ url_for('static', filename='imagens_main/cluster.png') }}" alt="Imagem Cluster" width="400px">
+          <a href="/bolinhas" class="mapa-btn">Ver Detalhes</a>
+        </div>
+        <div class="box">
+          <button type="submit" class="mapa-btn">Gráficos De Doenças</button>
+          <img src="{{ url_for('static', filename='imagens_main/graficos.png') }}" alt="Imagem Graficos" width="400px">
+          <a href="/barras" class="mapa-btn">Ver Detalhes</a>
+        </div>
+      </div>
+
+      <div class="right-box">
+        <img src="{{ url_for('static', filename='imagens_main/mapa.png') }}" alt="Imagem Mapa">
+        <a href="/mapa" target="_blank" class="mapa-btn">Ver Mapa Com Ruidos</a>
+        <a href="/mapa_validos" target="_blank" class="mapa-btn">Ver Mapa Apenas Válidos</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
