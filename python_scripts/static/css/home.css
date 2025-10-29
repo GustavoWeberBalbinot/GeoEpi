@@ -161,7 +161,7 @@
 }
 
 .box {
-  background-color: #fff;
+  background-color: #f3f4f6;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   width: 50%;        /* diminui a largura */
@@ -201,8 +201,8 @@
 
     /* Div da direita */
     .right-box {
+      background-color: #f3f4f6;
       border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       width: 25%;
       height: 700px;
       margin-right: 5%;

@@ -1,28 +1,19 @@
 Baixando CSV da URL: https://docs.google.com/spreadsheets/d/1zjTLpMVEEB3WnaOqhPLi2goRdYxKcCgqupinR3oVddc/export?format=csv&gid=1927323556
 Download do CSV bem-sucedido. Processando dados...
-Salvando os dados formatados no arquivo: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\dados_pacientes.csv
-Arquivo CSV atualizado com sucesso: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\dados_pacientes.csv
+Salvando os dados formatados no arquivo: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
+Arquivo CSV atualizado com sucesso: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
 Baixando CSV da URL: https://docs.google.com/spreadsheets/d/1zjTLpMVEEB3WnaOqhPLi2goRdYxKcCgqupinR3oVddc/export?format=csv&gid=1927323556
 Download do CSV bem-sucedido. Processando dados...
-Salvando os dados formatados no arquivo: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\dados_pacientes.csv
-Arquivo CSV atualizado com sucesso: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\dados_pacientes.csv
+Salvando os dados formatados no arquivo: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
+Arquivo CSV atualizado com sucesso: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
 Clusters detectados (geral):
-diagnostico       data  local_lat  local_lon  cluster
-      COVID 2025-10-28   -26.3212   -48.8456        0
-      COVID 2025-10-28   -26.3190   -48.8727        0
-     Dengue 2025-10-28   -26.3039   -48.8741        0
-     Dengue 2025-10-28   -26.3039   -48.8741        0
-  Influenza 2025-10-28   -26.3212   -48.8456        0
-
-Surtos detectados em torno de 2025-10-10:
  cluster diagnostico       data  local_lat  local_lon
-       0       COVID 2025-10-28   -26.3212   -48.8456
-       0       COVID 2025-10-28   -26.3190   -48.8727
-       0      Dengue 2025-10-28   -26.3039   -48.8741
-       0      Dengue 2025-10-28   -26.3039   -48.8741
-       0   Influenza 2025-10-28   -26.3212   -48.8456
+      -1      Dengue 2025-10-29    -26.319   -48.8727
 
-Gráficos salvos em: D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\imagens
-Mapa interativo salvo em D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\mapa_clusters.html
-Gerando mapa apenas com clusters válidos (5 pontos)...
-Mapa interativo salvo em D:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\mapa_clusters_validos.html
+Surtos detectados em torno de 2025-10-29:
+ cluster diagnostico       data  local_lat  local_lon
+      -1      Dengue 2025-10-29    -26.319   -48.8727
+
+Gráficos salvos em: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\imagens
+Mapa interativo salvo em D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\mapa_clusters.html
+Nenhum cluster válido encontrado para gerar o mapa.

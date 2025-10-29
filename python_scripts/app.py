@@ -16,13 +16,12 @@ BOLINHAS_PATH = os.path.join(BASE, "bolinhas.html")
 LOG_FILE = "saida_python.log"
 
 
-# cria CSV se não existir
 if not os.path.exists(CSV_PATH):
     pd.DataFrame(columns=["idade","genero","peso","altura","local_lat","local_lon","data","diagnostico"]).to_csv(CSV_PATH, index=False)
 
 
 def rodar_main_periodicamente():
-    """Executa o main.py a cada 1 minuto"""
+    """Executa o main.py a cada 30 seg"""
     while True:
         try:
             result = subprocess.run(["python", MAIN_PATH],
@@ -32,12 +31,11 @@ def rodar_main_periodicamente():
             print("main.py executado com sucesso:", result.stdout)
         except subprocess.CalledProcessError as e:
             print("Erro ao executar main.py:", e.stderr)
-        time.sleep(60)  # Espera 1 minuto antes de rodar novamente
+        time.sleep(30)
 
 # Inicia a execução periódica do main.py em uma thread separada
 thread = threading.Thread(target=rodar_main_periodicamente, daemon=True)
 thread.start()
-
 
 
 @app.route("/")
@@ -143,6 +141,7 @@ def exibir_mapa_validos():
     else:
         return "Mapa de clusters válidos ainda não gerado.", 404
 
+#Saida log
 
 @app.route("/saida_python")
 def saida_python():

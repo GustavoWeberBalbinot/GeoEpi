@@ -4,7 +4,6 @@ from sklearn.cluster import DBSCAN
 from haversine import haversine
 from datetime import timedelta
 import sys
-from gerar_imagens import gerar_graficos, gerar_mapa_clusters
 
 
 # ---------------------------
@@ -12,12 +11,10 @@ from gerar_imagens import gerar_graficos, gerar_mapa_clusters
 # ---------------------------
 
 LOG_FILE = "saida_python.log"
-sys.stdout = open(LOG_FILE, "w", encoding="utf-8")  # redireciona prints para o arquivo
+sys.stdout = open(LOG_FILE, "w", encoding="utf-8")
 
+#------
 
-# ---------------------------
-# Função de distância híbrida
-# ---------------------------
 def distancia_hibrida(coords, datas, peso_tempo=1/30):
     n = len(coords)
     dist_matrix = np.zeros((n, n))
@@ -29,10 +26,8 @@ def distancia_hibrida(coords, datas, peso_tempo=1/30):
             dist_matrix[i, j] = dist_matrix[j, i] = dist_total
     return dist_matrix
 
-# ---------------------------
-# Função DBSCAN
-# ---------------------------
-def detectar_clusters(df, eps_km=5, min_samples=6):
+
+def detectar_clusters(df, eps_km=0.8, min_samples=6):
     resultados = []
     for doenca, grupo in df.groupby("diagnostico"):
         if grupo.empty:
@@ -51,9 +46,6 @@ def detectar_clusters(df, eps_km=5, min_samples=6):
         return pd.DataFrame(columns=df.columns.tolist() + ["cluster"])
 
 
-# ---------------------------
-# DBSCAN por data
-# ---------------------------
 def detectar_surtos_por_data(df, data_ref, janela_dias=30):
     data_ref = pd.to_datetime(data_ref)
     mask = (df['data'] >= data_ref - timedelta(days=janela_dias)) & \

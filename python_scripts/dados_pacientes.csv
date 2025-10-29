@@ -1,6 +1,2 @@
 idade,genero,peso,altura,local_lat,local_lon,data,diagnostico
-gg,Feminino,515,512,-26.3212,-48.8456,2025-10-28,COVID
-50,Masculino,23,14.0,-26.319,-48.8727,2025-10-28,COVID
-55,Masculino,123.0,55,-26.3039,-48.8741,2025-10-28,Dengue
-51,Masculino,12,66,-26.3039,-48.8741,2025-10-28,Dengue
-99,Feminino,12,15,-26.3212,-48.8456,2025-10-28,Influenza
+Exemplo,Masculino,23,14.0,-26.319,-48.8727,2025-10-29,Dengue

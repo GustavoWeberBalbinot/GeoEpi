@@ -66,13 +66,13 @@
       img.style.display = "block";
     }
 
-    // Atualiza automaticamente os gráficos a cada 1 minuto
+    // Atualiza automaticamente os gráficos a cada 45 segundos
     function atualizarAutomaticamente() {
       setInterval(() => {
         console.log("🔄 Atualizando gráficos automaticamente...");
         atualizarGraficos("geral");
         atualizarGraficos("data");
-      }, 60000); // 60 segundos
+      }, 45000); // 45 segundos
     }
 
     // Inicialização ao carregar a página

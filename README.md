@@ -1,5 +1,9 @@
 # GeoEpi
 
+Questionário: https://docs.google.com/forms/d/e/1FAIpQLSfL8Ods4zXKcTRvnmYzVjtDz_zuBonmqtbapzJgI6iy_7zXpA/viewform?usp=header
+
+python .\python_scripts\app.py
+
 # Configs
 
 Python version: 3.19.9
