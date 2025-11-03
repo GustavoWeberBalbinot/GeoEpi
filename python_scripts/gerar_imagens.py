@@ -107,9 +107,11 @@ def gerar_graficos(df_resultado, subset=None, tipo="geral", data_ref=None, janel
 # ---------------------------
 # Função: mapa interativo de clusters
 # ---------------------------
+
 def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
     """
-    Gera mapa interativo com clusters coloridos por doença.
+    Gera mapa interativo com clusters coloridos por doença,
+    cada doença em uma camada separada para ligar/desligar.
     """
     cores_doencas = {
         'Dengue': 'orange',
@@ -118,16 +120,22 @@ def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
         'Zika': 'green'
     }
 
-    base_path = os.path.dirname(__file__)
+    base_path = os.path.dirname(__file__) 
     caminho_arquivo = os.path.join(base_path, arquivo_saida)
 
     lat_media = df['local_lat'].mean()
     lon_media = df['local_lon'].mean()
     mapa = folium.Map(location=[lat_media, lon_media], zoom_start=12)
 
+    # Criar uma FeatureGroup para cada doença
+    grupos_doenca = {}
+    for doenca in df['diagnostico'].unique():
+        grupos_doenca[doenca] = folium.FeatureGroup(name=doenca)
+    
     for _, row in df.iterrows():
         diagnostico = row["diagnostico"]
         cor = cores_doencas.get(diagnostico, "gray")
+        cluster_id = row['cluster']
 
         folium.Circle(
             location=[row['local_lat'], row['local_lon']],
@@ -136,11 +144,19 @@ def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
             fill=True,
             fill_color=cor,
             fill_opacity=0.4,
-            popup=f"{diagnostico} (Cluster {row['cluster']})"
-        ).add_to(mapa)
+            popup=f"{diagnostico} (Cluster {cluster_id})"
+        ).add_to(grupos_doenca[diagnostico])
 
+    # Adiciona todos os FeatureGroups no mapa
+    for grupo in grupos_doenca.values():
+        grupo.add_to(mapa)
+
+    # Adiciona controle de camadas
+    folium.LayerControl(collapsed=False).add_to(mapa)
+
+    # Salva
     mapa.save(caminho_arquivo)
-    print(f"Mapa interativo salvo em {caminho_arquivo}")
+    print(f"Mapa interativo com layers salvo em {caminho_arquivo}")
     return caminho_arquivo
 
 # ---------------------------
