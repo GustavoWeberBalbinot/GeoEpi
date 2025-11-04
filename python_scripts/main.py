@@ -4,7 +4,6 @@ from coleta_dados_google import baixar_e_formatar_csv
 import os
 import pandas as pd
 import sys
-import datetime
 
 
 # ---------------------------
@@ -28,7 +27,7 @@ if __name__ == "__main__":
     baixar_e_formatar_csv()
     df_geral = detectar_clusters(df)
     print("Clusters detectados (geral):")
-    print(df_geral[["cluster", "diagnostico", "data", "local_lat", "local_lon"]]
+    print(df_geral[["cluster", "diagnostico", "data", "local_lat", "local_lon", "nome"]]
           .to_string(index=False))
     gerar_graficos(df_geral, tipo="geral")
     #Verifica se tem data
@@ -40,7 +39,7 @@ if __name__ == "__main__":
     df_data = detectar_surtos_por_data(df, data_ref)
     if not df_data.empty:
         print(f"\nSurtos detectados em torno de {data_ref}:")
-        print(df_data[["cluster", "diagnostico", "data", "local_lat", "local_lon"]]
+        print(df_data[["cluster", "diagnostico", "data", "local_lat", "local_lon", "nome"]]
               .to_string(index=False))
         gerar_graficos(df_data, subset=df_data, tipo="data", data_ref=pd.to_datetime(data_ref))
     print(f"\nGráficos salvos em: {imagens_path}")

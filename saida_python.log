@@ -1,96 +1,23 @@
-Baixando CSV da URL: https://docs.google.com/spreadsheets/d/1zjTLpMVEEB3WnaOqhPLi2goRdYxKcCgqupinR3oVddc/export?format=csv&gid=1927323556
+Baixando CSV da URL: https://docs.google.com/spreadsheets/d/140Z4qTRHiaQw2OFR1-mRdBLjU4yz_hV4iHeoAHM8TXM/export?format=csv&gid=552440804
 Download do CSV bem-sucedido. Processando dados...
 Salvando os dados formatados no arquivo: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
 Arquivo CSV atualizado com sucesso: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
-Baixando CSV da URL: https://docs.google.com/spreadsheets/d/1zjTLpMVEEB3WnaOqhPLi2goRdYxKcCgqupinR3oVddc/export?format=csv&gid=1927323556
+Baixando CSV da URL: https://docs.google.com/spreadsheets/d/140Z4qTRHiaQw2OFR1-mRdBLjU4yz_hV4iHeoAHM8TXM/export?format=csv&gid=552440804
 Download do CSV bem-sucedido. Processando dados...
 Salvando os dados formatados no arquivo: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
 Arquivo CSV atualizado com sucesso: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
 [INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 3 pontos totais.
-[INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 6 pontos totais.
-[INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 5 pontos totais.
-[INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 17 pontos totais.
+[INFO] Matriz atualizada salva com 1 pontos totais.
 Clusters detectados (geral):
- cluster diagnostico       data  local_lat  local_lon
-      -1       COVID 2025-11-03   -26.3190   -48.8727
-      -1       COVID 2025-11-03   -26.3530   -48.8480
-      -1       COVID 2025-11-03   -26.3190   -48.8727
-       0      Dengue 2025-11-03   -26.3190   -48.8727
-       0      Dengue 2025-11-03   -26.3190   -48.8727
-      -1      Dengue 2025-11-03   -26.2777   -48.8478
-      -1      Dengue 2025-11-03   -26.2920   -48.8350
-      -1      Dengue 2025-11-03   -26.3044   -48.8487
-       0      Dengue 2025-11-03   -26.3190   -48.8727
-      -1   Influenza 2025-11-03   -26.2920   -48.8350
-      -1   Influenza 2025-11-03   -26.3190   -48.8727
-      -1   Influenza 2025-11-03   -26.3530   -48.8480
-      -1   Influenza 2025-11-03   -26.3143   -48.8652
-      -1   Influenza 2025-11-03   -26.3190   -48.8727
-       1        Zika 2025-11-03   -26.3530   -48.8480
-      -1        Zika 2025-11-03   -26.2950   -48.8550
-       1        Zika 2025-11-03   -26.3530   -48.8480
-      -1        Zika 2025-11-03   -26.3039   -48.8741
-      -1        Zika 2025-11-03   -26.3190   -48.8727
-      -1        Zika 2025-11-03   -26.3039   -48.8741
-      -1        Zika 2025-11-03   -26.2950   -48.8550
-      -1        Zika 2025-11-03   -26.3190   -48.8727
-       1        Zika 2025-11-03   -26.3530   -48.8480
-      -1        Zika 2025-11-03   -26.3044   -48.8487
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
+ cluster diagnostico       data  local_lat  local_lon        nome
+      -1      Dengue 2025-11-03   -26.3353   -48.8214 Gustavo, 15
 [INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 3 pontos totais.
-[INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 6 pontos totais.
-[INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 5 pontos totais.
-[INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 17 pontos totais.
+[INFO] Matriz atualizada salva com 1 pontos totais.
 
 Surtos detectados em torno de 2025-10-29:
- cluster diagnostico       data  local_lat  local_lon
-      -1       COVID 2025-11-03   -26.3190   -48.8727
-      -1       COVID 2025-11-03   -26.3530   -48.8480
-      -1       COVID 2025-11-03   -26.3190   -48.8727
-       0      Dengue 2025-11-03   -26.3190   -48.8727
-       0      Dengue 2025-11-03   -26.3190   -48.8727
-      -1      Dengue 2025-11-03   -26.2777   -48.8478
-      -1      Dengue 2025-11-03   -26.2920   -48.8350
-      -1      Dengue 2025-11-03   -26.3044   -48.8487
-       0      Dengue 2025-11-03   -26.3190   -48.8727
-      -1   Influenza 2025-11-03   -26.2920   -48.8350
-      -1   Influenza 2025-11-03   -26.3190   -48.8727
-      -1   Influenza 2025-11-03   -26.3530   -48.8480
-      -1   Influenza 2025-11-03   -26.3143   -48.8652
-      -1   Influenza 2025-11-03   -26.3190   -48.8727
-       1        Zika 2025-11-03   -26.3530   -48.8480
-      -1        Zika 2025-11-03   -26.2950   -48.8550
-       1        Zika 2025-11-03   -26.3530   -48.8480
-      -1        Zika 2025-11-03   -26.3039   -48.8741
-      -1        Zika 2025-11-03   -26.3190   -48.8727
-      -1        Zika 2025-11-03   -26.3039   -48.8741
-      -1        Zika 2025-11-03   -26.2950   -48.8550
-      -1        Zika 2025-11-03   -26.3190   -48.8727
-       1        Zika 2025-11-03   -26.3530   -48.8480
-      -1        Zika 2025-11-03   -26.3044   -48.8487
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
-       2        Zika 2025-11-03   -26.3143   -48.8652
+ cluster diagnostico       data  local_lat  local_lon        nome
+      -1      Dengue 2025-11-03   -26.3353   -48.8214 Gustavo, 15
 
 Gráficos salvos em: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\imagens
 Mapa interativo com layers salvo em D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\mapa_clusters.html
-Gerando mapa apenas com clusters válidos (13 pontos)...
-Mapa interativo com layers salvo em D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\mapa_clusters_validos.html
+Nenhum cluster válido encontrado para gerar o mapa.

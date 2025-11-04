@@ -66,33 +66,32 @@ def baixar_e_formatar_csv():
     # Caminhos
     pasta_destino = os.path.join(os.getcwd(), "python_scripts")
     arquivo_csv = os.path.join(pasta_destino, "dados_pacientes.csv")
-    print(f"Baixando CSV da URL: {url}")
     response = requests.get(url)
     
     # Verificando se o download foi bem-sucedido
     if response.status_code == 200:
-        print("Download do CSV bem-sucedido. Processando dados...")
         content = response.content.decode('utf-8').splitlines()
         reader = csv.reader(content)
         dados_formatados = []
         next(reader)
-        header = ['idade', 'genero', 'peso', 'altura', 'local_lat', 'local_lon', 'data', 'diagnostico']
+        header = ['nome', 'idade', 'genero', 'peso', 'altura', 'local_lat', 'local_lon', 'data', 'diagnostico']
         dados_formatados.append(header)
         # Processar cada linha
         for row in reader:
-            idade = row[1]
-            genero = row[2]
-            peso = row[3]
-            altura = row[4]
-            bairro = row[5]
-            diagnostico = row[6]
+            nome = row[1]
+            idade = row[2]
+            genero = row[3]
+            peso = row[4]
+            altura = row[5]
+            bairro = row[6]
+            diagnostico = row[7]
             data_formatada = datetime.now().strftime('%Y-%m-%d')
             coords_list = bairro_coords.get(bairro)
             if coords_list:
                 latitude, longitude = coords_list[0]
             else:
                 latitude, longitude = [None, None]
-            linha_formatada = [idade, genero, peso, altura, latitude, longitude, data_formatada, diagnostico]
+            linha_formatada = [nome, idade, genero, peso, altura, latitude, longitude, data_formatada, diagnostico]
             dados_formatados.append(linha_formatada)
         # Salvar CSV
         try:
