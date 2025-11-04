@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import folium
+from folium.plugins import MarkerCluster, FeatureGroupSubGroup
 import os
 
 # ---------------------------
@@ -108,10 +109,13 @@ def gerar_graficos(df_resultado, subset=None, tipo="geral", data_ref=None, janel
 # Função: mapa interativo de clusters
 # ---------------------------
 
+
 def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
     """
-    Gera mapa interativo com clusters coloridos por doença,
-    cada doença em uma camada separada para ligar/desligar.
+    Gera mapa interativo com:
+      - Clusters automáticos por zoom
+      - Círculos reais de 700 metros de raio
+      - Agrupamento por doença e ruído
     """
     cores_doencas = {
         'Dengue': 'orange',
@@ -120,44 +124,62 @@ def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
         'Zika': 'green'
     }
 
-    base_path = os.path.dirname(__file__) 
+    base_path = os.path.dirname(__file__)
     caminho_arquivo = os.path.join(base_path, arquivo_saida)
 
     lat_media = df['local_lat'].mean()
     lon_media = df['local_lon'].mean()
     mapa = folium.Map(location=[lat_media, lon_media], zoom_start=12)
 
-    # Criar uma FeatureGroup para cada doença
-    grupos_doenca = {}
+    # Cluster global principal
+    cluster_global = MarkerCluster(name="Agrupamento Global").add_to(mapa)
+
+    # Loop por doença
     for doenca in df['diagnostico'].unique():
-        grupos_doenca[doenca] = folium.FeatureGroup(name=doenca)
-    
-    for _, row in df.iterrows():
-        diagnostico = row["diagnostico"]
-        cor = cores_doencas.get(diagnostico, "gray")
-        cluster_id = row['cluster']
+        subset = df[df['diagnostico'] == doenca]
+        cor = cores_doencas.get(doenca, "gray")
 
-        folium.Circle(
-            location=[row['local_lat'], row['local_lon']],
-            radius=700,
-            color=cor,
-            fill=True,
-            fill_color=cor,
-            fill_opacity=0.4,
-            popup=f"{diagnostico} (Cluster {cluster_id})"
-        ).add_to(grupos_doenca[diagnostico])
+        # Grupos de controle
+        grupo_ativo = FeatureGroupSubGroup(cluster_global, name=f"{doenca} - Ativo")
+        grupo_ruido = FeatureGroupSubGroup(cluster_global, name=f"{doenca} - Ruído")
 
-    # Adiciona todos os FeatureGroups no mapa
-    for grupo in grupos_doenca.values():
-        grupo.add_to(mapa)
+        mapa.add_child(grupo_ativo)
+        mapa.add_child(grupo_ruido)
 
-    # Adiciona controle de camadas
+        # --- Pontos ativos ---
+        subset_ativo = subset[subset["cluster"] != -1]
+        for _, row in subset_ativo.iterrows():
+            folium.Circle(
+                location=[row["local_lat"], row["local_lon"]],
+                radius=700,  # 700 metros reais
+                color=cor,
+                fill=True,
+                fill_color=cor,
+                fill_opacity=0.45,
+                popup=f"<b>{doenca}</b><br>Cluster {row['cluster']}"
+            ).add_to(grupo_ativo)
+
+        # --- Pontos de ruído ---
+        subset_ruido = subset[subset["cluster"] == -1]
+        for _, row in subset_ruido.iterrows():
+            folium.Circle(
+                location=[row["local_lat"], row["local_lon"]],
+                radius=700,
+                color="black",
+                fill=True,
+                fill_color="gray",
+                fill_opacity=0.35,
+                popup=f"<b>{doenca}</b><br>Ruído"
+            ).add_to(grupo_ruido)
+
+    # Controle de camadas
     folium.LayerControl(collapsed=False).add_to(mapa)
 
-    # Salva
     mapa.save(caminho_arquivo)
-    print(f"Mapa interativo com layers salvo em {caminho_arquivo}")
+    print(f"✅ Mapa interativo com agrupamento e raio real salvo em {caminho_arquivo}")
     return caminho_arquivo
+
+
 
 # ---------------------------
 # Função: mapa apenas com clusters válidos

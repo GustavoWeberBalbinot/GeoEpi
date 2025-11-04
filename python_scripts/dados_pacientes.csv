@@ -1,2 +1,4 @@
 nome,idade,genero,peso,altura,local_lat,local_lon,data,diagnostico
-"Gustavo, 15",25,Masculino,26,26,-26.3353,-48.8214,2025-11-03,Dengue
+"Gustavo, 15",25,Masculino,26,26,-26.3353,-48.8214,2025-11-04,Dengue
+gg,23,Feminino,55,32,-26.2777,-48.8478,2025-11-04,Zika
+aaa,15,Masculino,15,15,-26.2777,-48.8478,2025-11-04,Zika

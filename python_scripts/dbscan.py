@@ -64,7 +64,7 @@ def atualizar_matriz_distancia(
     return nova_matrix
 
 
-def detectar_clusters(df, eps_km=0.8, min_samples=3):
+def detectar_clusters(df, eps_km=0.8, min_samples=2):
     resultados = []
     proximo_cluster_id = 0
     for doenca, grupo in df.groupby("diagnostico"):

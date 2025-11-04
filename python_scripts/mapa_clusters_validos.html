@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_35bac868853021b803027cff8decae66 {
+                #map_4fb25010c28329800dd3e7843d689f30 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -50,20 +50,24 @@
             </script>
 
         
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://unpkg.com/leaflet.featuregroup.subgroup@1.0.2/dist/leaflet.featuregroup.subgroup.js"></script>
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_35bac868853021b803027cff8decae66" ></div>
+            <div class="folium-map" id="map_4fb25010c28329800dd3e7843d689f30" ></div>
         
 </body>
 <script>
     
     
-            var map_35bac868853021b803027cff8decae66 = L.map(
-                "map_35bac868853021b803027cff8decae66",
+            var map_4fb25010c28329800dd3e7843d689f30 = L.map(
+                "map_4fb25010c28329800dd3e7843d689f30",
                 {
-                    center: [-26.32431538461538, -48.86296153846153],
+                    center: [-26.2777, -48.8478],
                     crs: L.CRS.EPSG3857,
                     ...{
   "zoom": 12,
@@ -78,7 +82,7 @@
 
         
     
-            var tile_layer_c49f058d340f05aee337d526bae1c66f = L.tileLayer(
+            var tile_layer_1d1dfb82a712a518eaf5f15c1c27c7e0 = L.tileLayer(
                 "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {
   "minZoom": 0,
@@ -95,344 +99,99 @@
             );
         
     
-            tile_layer_c49f058d340f05aee337d526bae1c66f.addTo(map_35bac868853021b803027cff8decae66);
+            tile_layer_1d1dfb82a712a518eaf5f15c1c27c7e0.addTo(map_4fb25010c28329800dd3e7843d689f30);
         
     
-            var feature_group_85b17b97f82da32e4fcf9f38e75b62bd = L.featureGroup(
+            var marker_cluster_6c39b4376579c7d45980da5155b5a47f = L.markerClusterGroup(
                 {
 }
             );
         
     
-            var circle_10314843ca0d7d779bfce4854c7e9bb1 = L.circle(
-                [-26.319, -48.8727],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_85b17b97f82da32e4fcf9f38e75b62bd);
+            marker_cluster_6c39b4376579c7d45980da5155b5a47f.addTo(map_4fb25010c28329800dd3e7843d689f30);
         
     
-        var popup_fdb71240b77cf5337a0f8f33e377e0c8 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_05d6cee8baa1e3805fc144eda7e65eb3 = $(`<div id="html_05d6cee8baa1e3805fc144eda7e65eb3" style="width: 100.0%; height: 100.0%;">Dengue (Cluster 0)</div>`)[0];
-                popup_fdb71240b77cf5337a0f8f33e377e0c8.setContent(html_05d6cee8baa1e3805fc144eda7e65eb3);
-            
-        
-
-        circle_10314843ca0d7d779bfce4854c7e9bb1.bindPopup(popup_fdb71240b77cf5337a0f8f33e377e0c8)
-        ;
-
-        
-    
-    
-            var circle_15641a751694071c58367719bd314d0e = L.circle(
-                [-26.319, -48.8727],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_85b17b97f82da32e4fcf9f38e75b62bd);
-        
-    
-        var popup_ed83602986fb6ddaa20544ca9177b809 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_f5d1d7e9ddef2a053671bf78ab27c4b5 = $(`<div id="html_f5d1d7e9ddef2a053671bf78ab27c4b5" style="width: 100.0%; height: 100.0%;">Dengue (Cluster 0)</div>`)[0];
-                popup_ed83602986fb6ddaa20544ca9177b809.setContent(html_f5d1d7e9ddef2a053671bf78ab27c4b5);
-            
-        
-
-        circle_15641a751694071c58367719bd314d0e.bindPopup(popup_ed83602986fb6ddaa20544ca9177b809)
-        ;
-
-        
-    
-    
-            var circle_2b621fa9cb426c0ac8ba8052a2c08aca = L.circle(
-                [-26.319, -48.8727],
-                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_85b17b97f82da32e4fcf9f38e75b62bd);
-        
-    
-        var popup_1f419785e5b3463d2a21d18491d0b26a = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_fc5ed1468581f2fce69fe11b3474dc6b = $(`<div id="html_fc5ed1468581f2fce69fe11b3474dc6b" style="width: 100.0%; height: 100.0%;">Dengue (Cluster 0)</div>`)[0];
-                popup_1f419785e5b3463d2a21d18491d0b26a.setContent(html_fc5ed1468581f2fce69fe11b3474dc6b);
-            
-        
-
-        circle_2b621fa9cb426c0ac8ba8052a2c08aca.bindPopup(popup_1f419785e5b3463d2a21d18491d0b26a)
-        ;
-
-        
-    
-    
-            feature_group_85b17b97f82da32e4fcf9f38e75b62bd.addTo(map_35bac868853021b803027cff8decae66);
-        
-    
-            var feature_group_8457057149695f4af1b5e0ba4345cfd7 = L.featureGroup(
-                {
-}
+            var feature_group_sub_group_8ed71498e18f0e380efd8420cbd77fbb = L.featureGroup.subGroup(
+                marker_cluster_6c39b4376579c7d45980da5155b5a47f
             );
         
     
-            var circle_92f28947b4704b5cc9c0a81539e06e66 = L.circle(
-                [-26.353, -48.848],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_8457057149695f4af1b5e0ba4345cfd7);
+            var circle_8b736dafff439bd34efdfc2843c3b1e9 = L.circle(
+                [-26.2777, -48.8478],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.45, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
+            ).addTo(feature_group_sub_group_8ed71498e18f0e380efd8420cbd77fbb);
         
     
-        var popup_68977e9173f50559f647ba5048ba11f5 = L.popup({
+        var popup_dbcdf20507337c3a3d9d5ee914c63a3c = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_9b6c599e87e03b5c55a6c7ba9d821963 = $(`<div id="html_9b6c599e87e03b5c55a6c7ba9d821963" style="width: 100.0%; height: 100.0%;">Zika (Cluster 1)</div>`)[0];
-                popup_68977e9173f50559f647ba5048ba11f5.setContent(html_9b6c599e87e03b5c55a6c7ba9d821963);
+                var html_c917b62422a49acd1ccc6ebbf4115911 = $(`<div id="html_c917b62422a49acd1ccc6ebbf4115911" style="width: 100.0%; height: 100.0%;"><b>Zika</b><br>Cluster 0</div>`)[0];
+                popup_dbcdf20507337c3a3d9d5ee914c63a3c.setContent(html_c917b62422a49acd1ccc6ebbf4115911);
             
         
 
-        circle_92f28947b4704b5cc9c0a81539e06e66.bindPopup(popup_68977e9173f50559f647ba5048ba11f5)
+        circle_8b736dafff439bd34efdfc2843c3b1e9.bindPopup(popup_dbcdf20507337c3a3d9d5ee914c63a3c)
         ;
 
         
     
     
-            var circle_878acf374474c331522e140bfe2887e1 = L.circle(
-                [-26.353, -48.848],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_8457057149695f4af1b5e0ba4345cfd7);
+            var circle_5a203e2afdf796ad75b876f31b8b14f1 = L.circle(
+                [-26.2777, -48.8478],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.45, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
+            ).addTo(feature_group_sub_group_8ed71498e18f0e380efd8420cbd77fbb);
         
     
-        var popup_47892bc727f45936f6467268066f92ae = L.popup({
+        var popup_252a42d8ab65e43dd7a9b07264ce6de1 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_5c959e65fada66866743f88b09a86f83 = $(`<div id="html_5c959e65fada66866743f88b09a86f83" style="width: 100.0%; height: 100.0%;">Zika (Cluster 1)</div>`)[0];
-                popup_47892bc727f45936f6467268066f92ae.setContent(html_5c959e65fada66866743f88b09a86f83);
+                var html_f8166872d39c7bdcc52c04bfb320cadc = $(`<div id="html_f8166872d39c7bdcc52c04bfb320cadc" style="width: 100.0%; height: 100.0%;"><b>Zika</b><br>Cluster 0</div>`)[0];
+                popup_252a42d8ab65e43dd7a9b07264ce6de1.setContent(html_f8166872d39c7bdcc52c04bfb320cadc);
             
         
 
-        circle_878acf374474c331522e140bfe2887e1.bindPopup(popup_47892bc727f45936f6467268066f92ae)
+        circle_5a203e2afdf796ad75b876f31b8b14f1.bindPopup(popup_252a42d8ab65e43dd7a9b07264ce6de1)
         ;
 
         
     
     
-            var circle_6606cea347ba97dbcceb18d7a04b3692 = L.circle(
-                [-26.353, -48.848],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_8457057149695f4af1b5e0ba4345cfd7);
+            feature_group_sub_group_8ed71498e18f0e380efd8420cbd77fbb.addTo(map_4fb25010c28329800dd3e7843d689f30);
         
     
-        var popup_21653dabc0c7e5c4b35bfdbd3010e5f1 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_1fb773b9d003590e92a9b731747fe452 = $(`<div id="html_1fb773b9d003590e92a9b731747fe452" style="width: 100.0%; height: 100.0%;">Zika (Cluster 1)</div>`)[0];
-                popup_21653dabc0c7e5c4b35bfdbd3010e5f1.setContent(html_1fb773b9d003590e92a9b731747fe452);
-            
-        
-
-        circle_6606cea347ba97dbcceb18d7a04b3692.bindPopup(popup_21653dabc0c7e5c4b35bfdbd3010e5f1)
-        ;
-
+            var feature_group_sub_group_1dbcc0572ee689c6e72e95c02693861a = L.featureGroup.subGroup(
+                marker_cluster_6c39b4376579c7d45980da5155b5a47f
+            );
         
     
-    
-            var circle_a67d4b9d1eef82177e1c2c0cd9b2565d = L.circle(
-                [-26.3143, -48.8652],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_8457057149695f4af1b5e0ba4345cfd7);
+            feature_group_sub_group_1dbcc0572ee689c6e72e95c02693861a.addTo(map_4fb25010c28329800dd3e7843d689f30);
         
     
-        var popup_b71fd09f890e46a5288dd4838cb3d695 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_9156506b6a056d626aab9a2a2fd4552c = $(`<div id="html_9156506b6a056d626aab9a2a2fd4552c" style="width: 100.0%; height: 100.0%;">Zika (Cluster 2)</div>`)[0];
-                popup_b71fd09f890e46a5288dd4838cb3d695.setContent(html_9156506b6a056d626aab9a2a2fd4552c);
-            
-        
-
-        circle_a67d4b9d1eef82177e1c2c0cd9b2565d.bindPopup(popup_b71fd09f890e46a5288dd4838cb3d695)
-        ;
-
-        
-    
-    
-            var circle_69b2c1fad34c0bc6dfa027f1594a29c8 = L.circle(
-                [-26.3143, -48.8652],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_8457057149695f4af1b5e0ba4345cfd7);
-        
-    
-        var popup_62e9946c666d320a39723be98ba02ab7 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_8a28c2d0ba7fe07eb219f191ff443a78 = $(`<div id="html_8a28c2d0ba7fe07eb219f191ff443a78" style="width: 100.0%; height: 100.0%;">Zika (Cluster 2)</div>`)[0];
-                popup_62e9946c666d320a39723be98ba02ab7.setContent(html_8a28c2d0ba7fe07eb219f191ff443a78);
-            
-        
-
-        circle_69b2c1fad34c0bc6dfa027f1594a29c8.bindPopup(popup_62e9946c666d320a39723be98ba02ab7)
-        ;
-
-        
-    
-    
-            var circle_5dcb8aff648611be6f467c35ae2fbd24 = L.circle(
-                [-26.3143, -48.8652],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_8457057149695f4af1b5e0ba4345cfd7);
-        
-    
-        var popup_c69fe3bf9bb5a0e2de7932d85b43868d = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_65514c6865d231a7e86b45e786a13648 = $(`<div id="html_65514c6865d231a7e86b45e786a13648" style="width: 100.0%; height: 100.0%;">Zika (Cluster 2)</div>`)[0];
-                popup_c69fe3bf9bb5a0e2de7932d85b43868d.setContent(html_65514c6865d231a7e86b45e786a13648);
-            
-        
-
-        circle_5dcb8aff648611be6f467c35ae2fbd24.bindPopup(popup_c69fe3bf9bb5a0e2de7932d85b43868d)
-        ;
-
-        
-    
-    
-            var circle_86e7e0e3fe6b810b85132b082c9ff73e = L.circle(
-                [-26.3143, -48.8652],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_8457057149695f4af1b5e0ba4345cfd7);
-        
-    
-        var popup_5b217e1ced3df9c8643363fcca13061c = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_32ec12df2fd7aeb779fba244384dc71f = $(`<div id="html_32ec12df2fd7aeb779fba244384dc71f" style="width: 100.0%; height: 100.0%;">Zika (Cluster 2)</div>`)[0];
-                popup_5b217e1ced3df9c8643363fcca13061c.setContent(html_32ec12df2fd7aeb779fba244384dc71f);
-            
-        
-
-        circle_86e7e0e3fe6b810b85132b082c9ff73e.bindPopup(popup_5b217e1ced3df9c8643363fcca13061c)
-        ;
-
-        
-    
-    
-            var circle_6e0882d5e701621e2102db5e47634af3 = L.circle(
-                [-26.3143, -48.8652],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_8457057149695f4af1b5e0ba4345cfd7);
-        
-    
-        var popup_97d26c79d099a2b77d9f7731ba485975 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_79d8cb26f4f478525adc40e4f55fca83 = $(`<div id="html_79d8cb26f4f478525adc40e4f55fca83" style="width: 100.0%; height: 100.0%;">Zika (Cluster 2)</div>`)[0];
-                popup_97d26c79d099a2b77d9f7731ba485975.setContent(html_79d8cb26f4f478525adc40e4f55fca83);
-            
-        
-
-        circle_6e0882d5e701621e2102db5e47634af3.bindPopup(popup_97d26c79d099a2b77d9f7731ba485975)
-        ;
-
-        
-    
-    
-            var circle_c1e6a8a7434a556dcdc51ded622c69aa = L.circle(
-                [-26.3143, -48.8652],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_8457057149695f4af1b5e0ba4345cfd7);
-        
-    
-        var popup_8d974382462a0306346f0fa70b0b4f48 = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_a0ac7297601e682e2b07047a48970905 = $(`<div id="html_a0ac7297601e682e2b07047a48970905" style="width: 100.0%; height: 100.0%;">Zika (Cluster 2)</div>`)[0];
-                popup_8d974382462a0306346f0fa70b0b4f48.setContent(html_a0ac7297601e682e2b07047a48970905);
-            
-        
-
-        circle_c1e6a8a7434a556dcdc51ded622c69aa.bindPopup(popup_8d974382462a0306346f0fa70b0b4f48)
-        ;
-
-        
-    
-    
-            var circle_751297f53b7bb466d29052ae39ebd1d0 = L.circle(
-                [-26.3143, -48.8652],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.4, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 700, "stroke": true, "weight": 3}
-            ).addTo(feature_group_8457057149695f4af1b5e0ba4345cfd7);
-        
-    
-        var popup_436c0e91f9c05d482399090b3185ba7e = L.popup({
-  "maxWidth": "100%",
-});
-
-        
-            
-                var html_491c31a2e627868fb561381e1e842171 = $(`<div id="html_491c31a2e627868fb561381e1e842171" style="width: 100.0%; height: 100.0%;">Zika (Cluster 2)</div>`)[0];
-                popup_436c0e91f9c05d482399090b3185ba7e.setContent(html_491c31a2e627868fb561381e1e842171);
-            
-        
-
-        circle_751297f53b7bb466d29052ae39ebd1d0.bindPopup(popup_436c0e91f9c05d482399090b3185ba7e)
-        ;
-
-        
-    
-    
-            feature_group_8457057149695f4af1b5e0ba4345cfd7.addTo(map_35bac868853021b803027cff8decae66);
-        
-    
-            var layer_control_2fef1049c3dd92055e4292ef41238d80_layers = {
+            var layer_control_6cd2182d419ddb17481716d11c4c5a57_layers = {
                 base_layers : {
-                    "openstreetmap" : tile_layer_c49f058d340f05aee337d526bae1c66f,
+                    "openstreetmap" : tile_layer_1d1dfb82a712a518eaf5f15c1c27c7e0,
                 },
                 overlays :  {
-                    "Dengue" : feature_group_85b17b97f82da32e4fcf9f38e75b62bd,
-                    "Zika" : feature_group_8457057149695f4af1b5e0ba4345cfd7,
+                    "Agrupamento Global" : marker_cluster_6c39b4376579c7d45980da5155b5a47f,
+                    "Zika - Ativo" : feature_group_sub_group_8ed71498e18f0e380efd8420cbd77fbb,
+                    "Zika - Ru\u00eddo" : feature_group_sub_group_1dbcc0572ee689c6e72e95c02693861a,
                 },
             };
-            let layer_control_2fef1049c3dd92055e4292ef41238d80 = L.control.layers(
-                layer_control_2fef1049c3dd92055e4292ef41238d80_layers.base_layers,
-                layer_control_2fef1049c3dd92055e4292ef41238d80_layers.overlays,
+            let layer_control_6cd2182d419ddb17481716d11c4c5a57 = L.control.layers(
+                layer_control_6cd2182d419ddb17481716d11c4c5a57_layers.base_layers,
+                layer_control_6cd2182d419ddb17481716d11c4c5a57_layers.overlays,
                 {
   "position": "topright",
   "collapsed": false,
   "autoZIndex": true,
 }
-            ).addTo(map_35bac868853021b803027cff8decae66);
+            ).addTo(map_4fb25010c28329800dd3e7843d689f30);
 
         
 </script>
