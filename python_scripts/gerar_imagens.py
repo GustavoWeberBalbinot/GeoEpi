@@ -1,20 +1,18 @@
 import matplotlib.pyplot as plt
 import folium
 from folium.plugins import MarkerCluster, FeatureGroupSubGroup
+from branca.element import Element
 import os
 
-# ---------------------------
+
 # Caminhos
-# ---------------------------
 base_path = os.path.dirname(__file__)
 imagens_path = os.path.join(base_path, "imagens")
 csv_path = os.path.join(base_path, "dados_pacientes.csv")
 
 os.makedirs(imagens_path, exist_ok=True)
 
-# ---------------------------
-# Função: gráficos
-# ---------------------------
+
 def gerar_graficos(df_resultado, subset=None, tipo="geral", data_ref=None, janela_dias=30):
     cores_doencas = {
         'Dengue': 'orange',
@@ -25,9 +23,7 @@ def gerar_graficos(df_resultado, subset=None, tipo="geral", data_ref=None, janel
 
     if tipo == "geral":
         df_plot = df_resultado
-        # ---------------------------
         # Gráfico de clusters
-        # ---------------------------
         plt.figure(figsize=(8,6))
         for doenca, grupo in df_plot.groupby('diagnostico'):
             cor = cores_doencas.get(doenca, 'gray')
@@ -47,9 +43,7 @@ def gerar_graficos(df_resultado, subset=None, tipo="geral", data_ref=None, janel
         plt.savefig(os.path.join(imagens_path, "cluster_geral.png"), bbox_inches='tight')
         plt.close()
 
-        # ---------------------------
         # Gráfico de barras coloridas
-        # ---------------------------
         contagem_doencas = df_plot['diagnostico'].value_counts()
         plt.figure(figsize=(8,6))
 
@@ -66,9 +60,7 @@ def gerar_graficos(df_resultado, subset=None, tipo="geral", data_ref=None, janel
 
     elif tipo == "data" and subset is not None:
         df_plot = subset
-        # ---------------------------
         # Gráfico de clusters por data
-        # ---------------------------
         plt.figure(figsize=(8,6))
         for doenca, grupo in df_plot.groupby('diagnostico'):
             cor = cores_doencas.get(doenca, 'gray')
@@ -88,9 +80,7 @@ def gerar_graficos(df_resultado, subset=None, tipo="geral", data_ref=None, janel
         plt.savefig(os.path.join(imagens_path, "cluster_data.png"), bbox_inches='tight')
         plt.close()
 
-        # ---------------------------
         # Gráfico de barras coloridas por data
-        # ---------------------------
         contagem_doencas = df_plot['diagnostico'].value_counts()
         plt.figure(figsize=(8,6))
 
@@ -104,10 +94,6 @@ def gerar_graficos(df_resultado, subset=None, tipo="geral", data_ref=None, janel
         plt.tight_layout()
         plt.savefig(os.path.join(imagens_path, "barras_data.png"))
         plt.close()
-
-# ---------------------------
-# Função: mapa interativo de clusters
-# ---------------------------
 
 
 def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
@@ -146,7 +132,7 @@ def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
         mapa.add_child(grupo_ativo)
         mapa.add_child(grupo_ruido)
 
-        # --- Pontos ativos ---
+        #Pontos ativos
         subset_ativo = subset[subset["cluster"] != -1]
         for _, row in subset_ativo.iterrows():
             folium.Circle(
@@ -159,7 +145,7 @@ def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
                 popup=f"<b>{doenca}</b><br>Cluster {row['cluster']}"
             ).add_to(grupo_ativo)
 
-        # --- Pontos de ruído ---
+        #Pontos de ruído
         subset_ruido = subset[subset["cluster"] == -1]
         for _, row in subset_ruido.iterrows():
             folium.Circle(
@@ -175,15 +161,20 @@ def gerar_mapa_clusters(df, arquivo_saida="mapa_clusters.html"):
     # Controle de camadas
     folium.LayerControl(collapsed=False).add_to(mapa)
 
+    reload_script = """
+    <script>
+    setInterval(() => {
+        location.reload();
+    }, 10000); // recarrega a cada 10 segundos
+    </script>
+    """
+    mapa.get_root().html.add_child(Element(reload_script))
     mapa.save(caminho_arquivo)
-    print(f"✅ Mapa interativo com agrupamento e raio real salvo em {caminho_arquivo}")
+    print(f"Mapa interativo com agrupamento e raio real salvo em {caminho_arquivo}")
+
     return caminho_arquivo
 
 
-
-# ---------------------------
-# Função: mapa apenas com clusters válidos
-# ---------------------------
 def gerar_mapa_clusters_validos(df, arquivo_saida="mapa_clusters_validos.html"):
     """
     Gera um mapa apenas com clusters válidos (exclui ruído, cluster = -1)

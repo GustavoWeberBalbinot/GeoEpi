@@ -7,14 +7,11 @@ import os
 import sys
 
 
-# ---------------------------
-# Salvar Logs
-# ---------------------------
 
+# Salvar Logs
 LOG_FILE = "saida_python.log"
 sys.stdout = open(LOG_FILE, "w", encoding="utf-8")
 
-#------
 
 def atualizar_matriz_distancia(
     arquivo_matriz,

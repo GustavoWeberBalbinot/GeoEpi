@@ -4,30 +4,30 @@ from coleta_dados_google import baixar_e_formatar_csv
 import os
 import pandas as pd
 import sys
+import time
+from datetime import date
 
 
-# ---------------------------
 # Caminhos
-# ---------------------------
 base_path = os.path.dirname(__file__)
 imagens_path = os.path.join(base_path, "imagens")
 csv_path = os.path.join(base_path, "dados_pacientes.csv")
 os.makedirs(imagens_path, exist_ok=True)
 
 
-# ---------------------------
+
 # Ler CSV
-# ---------------------------
-df = pd.read_csv(csv_path)
+df = pd.read_csv(csv_path, sep=",", quotechar='"', engine="python")
 df["data"] = pd.to_datetime(df["data"], errors="coerce")
-df = df.dropna(subset=["data", "local_lat", "local_lon"])  # remove linhas inválidas
+df = df.dropna(subset=["data", "local_lat", "local_lon"])
 
 
 if __name__ == "__main__":
     baixar_e_formatar_csv()
+    time.sleep(3)
     df_geral = detectar_clusters(df)
     print("Clusters detectados (geral):")
-    print(df_geral[["cluster", "diagnostico", "data", "local_lat", "local_lon", "nome"]]
+    print(df_geral[["cluster", "diagnostico", "data", "local_lat", "local_lon","nome"]]
           .to_string(index=False))
     gerar_graficos(df_geral, tipo="geral")
     #Verifica se tem data
@@ -35,7 +35,7 @@ if __name__ == "__main__":
         data_ref = sys.argv[1]
         print(f"Rodando DBSCAN para a data: {data_ref}")
     else:
-        data_ref = '2025-10-29'
+        data_ref = date.today().strftime("%Y-%m-%d")
     df_data = detectar_surtos_por_data(df, data_ref)
     if not df_data.empty:
         print(f"\nSurtos detectados em torno de {data_ref}:")

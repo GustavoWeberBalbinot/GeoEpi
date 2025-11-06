@@ -1,28 +1,47 @@
-Salvando os dados formatados no arquivo: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
-Arquivo CSV atualizado com sucesso: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
-Salvando os dados formatados no arquivo: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
-Arquivo CSV atualizado com sucesso: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\dados_pacientes.csv
+[INFO] Nenhuma nova linha encontrada.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 3 pontos totais.
 [INFO] Nenhuma matriz anterior encontrada. Criando nova.
 [INFO] Matriz atualizada salva com 1 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 4 pontos totais.
 [INFO] Nenhuma matriz anterior encontrada. Criando nova.
 [INFO] Matriz atualizada salva com 2 pontos totais.
 Clusters detectados (geral):
- cluster diagnostico       data  local_lat  local_lon        nome
-      -1      Dengue 2025-11-04   -26.3353   -48.8214 Gustavo, 15
-       0        Zika 2025-11-04   -26.2777   -48.8478          gg
-       0        Zika 2025-11-04   -26.2777   -48.8478         aaa
+ cluster diagnostico       data  local_lat  local_lon             nome
+      -1       COVID 2025-11-06   -26.2950   -48.8550           asdasd
+      -1       COVID 2025-11-06   -26.2800   -48.8500             asda
+      -1       COVID 2025-11-06   -26.2800   -48.8700               ds
+      -1      Dengue 2025-11-06   -26.2700   -48.8200             aaaa
+       0   Influenza 2025-11-06   -26.3353   -48.8214      Gustavo  15
+       1   Influenza 2025-11-06   -26.3190   -48.8727 Rodrigo do  doze
+       1   Influenza 2025-11-06   -26.3190   -48.8727 Rodrigo do  doze
+       0   Influenza 2025-11-06   -26.3400   -48.8200              ggg
+      -1        Zika 2025-11-06   -26.3000   -48.8700              aaa
+      -1        Zika 2025-11-06   -26.3143   -48.8652              ggg
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 3 pontos totais.
 [INFO] Nenhuma matriz anterior encontrada. Criando nova.
 [INFO] Matriz atualizada salva com 1 pontos totais.
 [INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 4 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
 [INFO] Matriz atualizada salva com 2 pontos totais.
 
-Surtos detectados em torno de 2025-10-29:
- cluster diagnostico       data  local_lat  local_lon        nome
-      -1      Dengue 2025-11-04   -26.3353   -48.8214 Gustavo, 15
-       0        Zika 2025-11-04   -26.2777   -48.8478          gg
-       0        Zika 2025-11-04   -26.2777   -48.8478         aaa
+Surtos detectados em torno de 2025-11-06:
+ cluster diagnostico       data  local_lat  local_lon             nome
+      -1       COVID 2025-11-06   -26.2950   -48.8550           asdasd
+      -1       COVID 2025-11-06   -26.2800   -48.8500             asda
+      -1       COVID 2025-11-06   -26.2800   -48.8700               ds
+      -1      Dengue 2025-11-06   -26.2700   -48.8200             aaaa
+       0   Influenza 2025-11-06   -26.3353   -48.8214      Gustavo  15
+       1   Influenza 2025-11-06   -26.3190   -48.8727 Rodrigo do  doze
+       1   Influenza 2025-11-06   -26.3190   -48.8727 Rodrigo do  doze
+       0   Influenza 2025-11-06   -26.3400   -48.8200              ggg
+      -1        Zika 2025-11-06   -26.3000   -48.8700              aaa
+      -1        Zika 2025-11-06   -26.3143   -48.8652              ggg
 
 Gráficos salvos em: D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\imagens
-✅ Mapa interativo com agrupamento e raio real salvo em D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\mapa_clusters.html
-Gerando mapa apenas com clusters válidos (2 pontos)...
-✅ Mapa interativo com agrupamento e raio real salvo em D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\mapa_clusters_validos.html
+Mapa interativo com agrupamento e raio real salvo em D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\mapa_clusters.html
+Gerando mapa apenas com clusters válidos (4 pontos)...
+Mapa interativo com agrupamento e raio real salvo em D:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\mapa_clusters_validos.html

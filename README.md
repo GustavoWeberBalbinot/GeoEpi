@@ -16,16 +16,17 @@ pip install pandas numpy scikit-learn haversine flask matplotlib folium python-d
 
 Folium - Python para maps
 
+Flask - FrameWork de "sevidor web python"
+
 
 To do:
 
-Arrumar o mapa para que cluster -1 Não apareça talvez, ou fazer um para TUDO. 
-Possibilidade de ativar ou desativar o cluster -1. através de 2 html?
+Testar as 30 coordenadas
 
-colocar uma entrada para definir EPS E MIN_SAMPLE
+Criar gráficos de regiões por Doença
 
-Fazer o mapa
-Geral
+Verificar os mapas_cluster para tentar juntar as bolinhas
 
-Por data
+Problemas:
 
+Ao atualizar a tabela automaticamente, ao colocar dados manualmente pelo site, há como perder os próximos dados que serão colocados no drive

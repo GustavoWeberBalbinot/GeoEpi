@@ -21,7 +21,7 @@ if not os.path.exists(CSV_PATH):
 
 
 def rodar_main_periodicamente():
-    """Executa o main.py a cada 30 seg"""
+    """Executa o main.py a cada 15 seg"""
     while True:
         try:
             result = subprocess.run(["python", MAIN_PATH],
@@ -31,7 +31,7 @@ def rodar_main_periodicamente():
             print("main.py executado com sucesso:", result.stdout)
         except subprocess.CalledProcessError as e:
             print("Erro ao executar main.py:", e.stderr)
-        time.sleep(30)
+        time.sleep(15)
 
 # Inicia a execução periódica do main.py em uma thread separada
 thread = threading.Thread(target=rodar_main_periodicamente, daemon=True)
