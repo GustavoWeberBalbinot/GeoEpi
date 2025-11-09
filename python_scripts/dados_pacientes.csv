@@ -1,11 +1,41 @@
 nome,idade,genero,peso,altura,local_lat,local_lon,bairro,data,diagnostico
-Gustavo  15,25,Masculino,26,26,-26.3353,-48.8214,Boehmerwald,2025-11-06,Influenza
-aaa,15,Masculino,15,15,-26.3,-48.87,Zona Norte,2025-11-06,Zika
-asdasd,1241241,Masculino,515,666,-26.295,-48.855,Petrópolis,2025-11-06,COVID
-Rodrigo do  doze,15,Masculino,26,15,-26.319,-48.8727,Anita Garibaldi,2025-11-06,Influenza
-Rodrigo do  doze,15,Masculino,26,15,-26.319,-48.8727,Anita Garibaldi,2025-11-06,Influenza
-aaaa,15,Masculino,66,66,-26.27,-48.82,Boa Vista,2025-11-06,Dengue
-asda,66,Masculino,555,66,-26.28,-48.85,Saguaçu,2025-11-06,COVID
-ggg,145,Masculino,66,77,-26.34,-48.82,Zona Sul,2025-11-06,Influenza
-ggg,13,Masculino,13,154,-26.3143,-48.8652,Iririú,2025-11-06,Zika
-ds,12,Masculino,15,15,-26.28,-48.87,Centro de Joinville,2025-11-06,COVID
+Gustavo  15,25,Masculino,26,26,-26.3353,-48.8214,Boehmerwald,2025-11-09,COVID
+gg,23,Feminino,55,32,-26.252,-48.82,Zona Norte,2025-11-09,COVID
+aaa,15,Masculino,15,15,-26.295,-48.82,Comerciário,2025-11-09,Zika
+asdasd,1241241,Masculino,515,666,-26.295,-48.855,Petrópolis,2025-11-09,Zika
+Rodrigo do  doze,15,Masculino,26,15,-26.319,-48.8727,Anita Garibaldi,2025-11-09,Zika
+aaaa,15,Masculino,66,66,-26.27,-48.82,Boa Vista,2025-11-09,COVID
+asda,66,Masculino,555,66,-26.3039,-48.8741,Saguaçu,2025-11-09,COVID
+ggg,145,Masculino,66,77,-26.38,-48.87,Zona Sul,2025-11-09,Zika
+ggg,13,Masculino,13,154,-26.335,-48.89,Iririú,2025-11-09,Zika
+ds,12,Masculino,15,15,-26.28,-48.87,Centro de Joinville,2025-11-09,Zika
+Gustavo  15,25,Masculino,26,26,-26.31,-48.84,Boehmerwald,2025-11-09,Influenza
+gg,23,Feminino,55,32,-26.3,-48.87,Zona Norte,2025-11-09,Influenza
+aaa,15,Masculino,15,15,-26.335,-48.85,Comerciário,2025-11-09,Influenza
+asdasd,1241241,Masculino,515,666,-26.28,-48.84,Petrópolis,2025-11-09,Influenza
+Rodrigo do  doze,15,Masculino,26,15,-26.34,-48.895,Anita Garibaldi,2025-11-09,Zika
+aaaa,15,Masculino,66,66,-26.31,-48.87,Boa Vista,2025-11-09,Zika
+asda,66,Masculino,555,66,-26.3039,-48.8741,Saguaçu,2025-11-09,Zika
+ggg,145,Masculino,66,77,-26.38,-48.87,Zona Sul,2025-11-09,Influenza
+ggg,13,Masculino,13,154,-26.335,-48.89,Iririú,2025-11-09,Influenza
+ds,12,Masculino,15,15,-26.33,-48.83,Centro de Joinville,2025-11-09,Influenza
+Gustavo  15,25,Masculino,26,26,-26.31,-48.84,Boehmerwald,2025-11-09,Dengue
+gg,23,Feminino,55,32,-26.3,-48.87,Zona Norte,2025-11-09,Dengue
+aaa,15,Masculino,15,15,-26.345,-48.87,Comerciário,2025-11-09,Dengue
+asdasd,1241241,Masculino,515,666,-26.325,-48.89,Petrópolis,2025-11-09,Dengue
+Rodrigo do  doze,15,Masculino,26,15,-26.295,-48.85,Anita Garibaldi,2025-11-09,Zika
+aaaa,15,Masculino,66,66,-26.31,-48.87,Boa Vista,2025-11-09,Zika
+asda,66,Masculino,555,66,-26.28,-48.85,Saguaçu,2025-11-09,Zika
+ggg,145,Masculino,66,77,-26.353,-48.848,Zona Sul,2025-11-09,Dengue
+ggg,13,Masculino,13,154,-26.3143,-48.8652,Iririú,2025-11-09,Dengue
+ds,12,Masculino,15,15,-26.3044,-48.8487,Centro de Joinville,2025-11-09,Dengue
+Gustavo  15,25,Masculino,26,26,-26.31,-48.84,Boehmerwald,2025-11-09,Zika
+gg,23,Feminino,55,32,-26.3,-48.87,Zona Norte,2025-11-09,Zika
+aaa,15,Masculino,15,15,-26.295,-48.82,Comerciário,2025-11-09,Zika
+asdasd,1241241,Masculino,515,666,-26.325,-48.89,Petrópolis,2025-11-09,Zika
+Rodrigo do  doze,15,Masculino,26,15,-26.34,-48.895,Anita Garibaldi,2025-11-09,Zika
+aaaa,15,Masculino,66,66,-26.31,-48.87,Boa Vista,2025-11-09,Zika
+asda,66,Masculino,555,66,-26.325,-48.895,Saguaçu,2025-11-09,Zika
+ggg,145,Masculino,66,77,-26.38,-48.87,Zona Sul,2025-11-09,Zika
+ggg,13,Masculino,13,154,-26.3143,-48.8652,Iririú,2025-11-09,Zika
+ds,12,Masculino,15,15,-26.33,-48.83,Centro de Joinville,2025-11-09,Zika

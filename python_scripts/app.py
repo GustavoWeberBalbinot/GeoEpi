@@ -1,9 +1,11 @@
+from coleta_dados_google import adicionar_no_csv
 from flask import Flask, request, render_template, jsonify, send_file, Response
 import pandas as pd
 import subprocess
 import os
 import time
 import threading
+import datetime
 
 app = Flask(__name__)
 
@@ -67,16 +69,25 @@ def pagina_saida_python():
 def dados():
     return render_template("dados.html")
 
+
 @app.route("/enviar_dados", methods=["POST"])
 def enviar_dados():
-    data = request.get_json()
-    if not data:
-        return jsonify({"erro": "Nenhum dado recebido"}), 400
-
-    df = pd.read_csv(CSV_PATH)
-    df = pd.concat([df, pd.DataFrame([data])], ignore_index=True)
-    df.to_csv(CSV_PATH, index=False)
-    return jsonify({"mensagem": "Dados adicionados ao CSV com sucesso!"})
+    try:
+        dados = request.get_json()
+        campos_obrigatorios = ["nome", "idade", "genero", "peso", "altura", "bairro", "data", "diagnostico"]
+        for campo in campos_obrigatorios:
+            if campo not in dados or str(dados[campo]).strip() == "":
+                return jsonify({"erro": f"Campo obrigatório ausente: {campo}"}), 400
+        try:
+            datetime.datetime.strptime(dados["data"], "%Y-%m-%d")
+        except ValueError:
+            return jsonify({"erro": "Formato de data inválido. Use AAAA-MM-DD."}), 400
+        adicionar_no_csv(dados)
+        return jsonify({"mensagem": "Dados salvos com sucesso!"}), 200
+    
+    except Exception as e:
+        return jsonify({"erro": str(e)}), 500
+    
 
 
 @app.route("/rodar_dbscan", methods=["GET"])
@@ -105,7 +116,6 @@ def rodar_dbscan_data():
             text=True,
             check=True
         )
-        # o dbscan.py salva o mapa automaticamente
         return jsonify({"saida": result.stdout})
     except subprocess.CalledProcessError as e:
         return jsonify({"erro": e.stderr}), 500
@@ -114,10 +124,14 @@ def rodar_dbscan_data():
 
 @app.route("/grafico/<tipo>")
 def grafico(tipo):
-    """tipo: cluster_geral, barras_geral, cluster_data, barras_data"""
+    """
+    tipo: cluster_geral, barras_geral, cluster_data, barras_data,
+          pizza_covid, pizza_zika, pizza_dengue, pizza_influenza
+    """
     path = os.path.join(IMAGENS_PATH, f"{tipo}.png")
+
     if os.path.exists(path):
-        return send_file(path, mimetype='image/png')
+        return send_file(path, mimetype="image/png")
     else:
         return f"Gráfico {tipo} ainda não gerado", 404
 

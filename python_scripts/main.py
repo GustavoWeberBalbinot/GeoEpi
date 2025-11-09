@@ -1,4 +1,4 @@
-from gerar_imagens import gerar_graficos, gerar_mapa_clusters, gerar_mapa_clusters_validos
+from gerar_imagens import gerar_mapa_clusters, gerar_mapa_clusters_validos, gerar_grafico_geral, gerar_grafico_tempo, gerar_graficos_pizza
 from dbscan import detectar_clusters, detectar_surtos_por_data
 from coleta_dados_google import baixar_e_formatar_csv
 import os
@@ -29,7 +29,8 @@ if __name__ == "__main__":
     print("Clusters detectados (geral):")
     print(df_geral[["cluster", "diagnostico", "data", "local_lat", "local_lon","nome"]]
           .to_string(index=False))
-    gerar_graficos(df_geral, tipo="geral")
+    gerar_grafico_geral(df_geral)
+    gerar_graficos_pizza(df_geral)
     #Verifica se tem data
     if len(sys.argv) > 1:
         data_ref = sys.argv[1]
@@ -41,7 +42,7 @@ if __name__ == "__main__":
         print(f"\nSurtos detectados em torno de {data_ref}:")
         print(df_data[["cluster", "diagnostico", "data", "local_lat", "local_lon", "nome"]]
               .to_string(index=False))
-        gerar_graficos(df_data, subset=df_data, tipo="data", data_ref=pd.to_datetime(data_ref))
+        gerar_grafico_tempo(df_data, data_ref=data_ref)
     print(f"\nGráficos salvos em: {imagens_path}")
     # Gerar mapa interativo
     gerar_mapa_clusters(df_geral, arquivo_saida="mapa_clusters.html")

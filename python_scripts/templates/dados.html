@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dados</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dados.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados Epidemiológicos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dados.css') }}">
 </head>
 <body>
-    <h1>📊 DBSCAN - Sistema de Análise Epidemiológica</h1>
+  <h1>📊 DBSCAN - Sistema de Análise Epidemiológica</h1>
 
   <!-- Entrada de dados -->
-  <div>
+  <div class="form-container">
+    <label>Nome:</label>
+    <input type="text" id="nome" required>
+
     <label>Idade:</label>
     <input type="number" id="idade" required>
 
     <label>Gênero:</label>
     <select id="genero">
-      <option value="M">M</option>
-      <option value="F">F</option>
+      <option value="M">Masculino</option>
+      <option value="F">Feminino</option>
     </select>
 
     <label>Peso (kg):</label>
@@ -26,33 +29,45 @@
     <label>Altura (m):</label>
     <input type="number" id="altura" step="0.01" required>
 
-    <label>Latitude:</label>
-    <input type="number" id="lat" step="0.0001" required>
-
-    <label>Longitude:</label>
-    <input type="number" id="lon" step="0.0001" required>
+    <label>Bairro:</label>
+    <select id="bairro" required>
+      <option value="Centro de Joinville">Centro de Joinville</option>
+      <option value="Zona Norte">Zona Norte</option>
+      <option value="Zona Sul">Zona Sul</option>
+      <option value="Boa Vista">Boa Vista</option>
+      <option value="Saguaçu">Saguaçu</option>
+      <option value="Boehmerwald">Boehmerwald</option>
+      <option value="Comerciário">Comerciário</option>
+      <option value="Iririú">Iririú</option>
+      <option value="Petrópolis">Petrópolis</option>
+      <option value="Anita Garibaldi">Anita Garibaldi</option>
+    </select>
 
     <label>Data:</label>
     <input type="date" id="data" required>
 
     <label>Diagnóstico:</label>
-    <input type="text" id="diagnostico" required>
+    <select id="diagnostico" required>
+      <option value="Dengue">Dengue</option>
+      <option value="COVID">COVID</option>
+      <option value="Influenza">Influenza</option>
+      <option value="Zika">Zika</option>
+    </select>
 
-    <br>
+    <br><br>
     <button onclick="enviarDados()">📥 Enviar Dados</button>
-
     <a href="/main">Voltar</a>
-
   </div>
+
   <script>
     async function enviarDados() {
-      const dados = { 
+      const dados = {
+        nome: document.getElementById("nome").value.trim(),
         idade: parseInt(document.getElementById("idade").value),
         genero: document.getElementById("genero").value,
         peso: parseFloat(document.getElementById("peso").value),
         altura: parseFloat(document.getElementById("altura").value),
-        local_lat: parseFloat(document.getElementById("lat").value),
-        local_lon: parseFloat(document.getElementById("lon").value),
+        bairro: document.getElementById("bairro").value,
         data: document.getElementById("data").value,
         diagnostico: document.getElementById("diagnostico").value
       };
@@ -66,21 +81,19 @@
       const json = await resp.json();
       alert(json.mensagem || json.erro);
 
-      // Limpar os campos após o envio
-      limparCampos();
+      if (json.mensagem) limparCampos();
     }
 
     function limparCampos() {
+      document.getElementById("nome").value = '';
       document.getElementById("idade").value = '';
       document.getElementById("genero").value = 'M';
       document.getElementById("peso").value = '';
       document.getElementById("altura").value = '';
-      document.getElementById("lat").value = '';
-      document.getElementById("lon").value = '';
+      document.getElementById("bairro").selectedIndex = 0; 
       document.getElementById("data").value = '';
-      document.getElementById("diagnostico").value = '';
+      document.getElementById("diagnostico").selectedIndex = 0;
     }
   </script>
-
 </body>
 </html>

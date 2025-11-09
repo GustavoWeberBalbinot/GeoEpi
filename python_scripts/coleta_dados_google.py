@@ -10,6 +10,11 @@ import time
 load_dotenv()
 url = os.getenv("GOOGLE_SHEET_URL")
 
+pasta_destino = os.path.join(os.getcwd(), "python_scripts")
+os.makedirs(pasta_destino, exist_ok=True)
+arquivo_csv = os.path.join(pasta_destino, "dados_pacientes.csv")
+
+
 bairro_coords = {
     "Centro de Joinville": [
         [-26.3044, -48.8487],
@@ -137,3 +142,38 @@ def baixar_e_formatar_csv():
     time.sleep(1)
 
 
+def adicionar_no_csv(dados):
+    header = ['nome', 'idade', 'genero', 'peso', 'altura',
+              'local_lat', 'local_lon', 'bairro', 'data', 'diagnostico']
+    obrigatorios = ['nome', 'idade', 'genero', 'peso', 'altura', 'bairro', 'diagnostico']
+    for campo in obrigatorios:
+        if campo not in dados or not dados[campo]:
+            raise ValueError(f"Campo obrigatório ausente: {campo}")
+        
+    nome_limpo = re.sub(r'[^A-Za-zÀ-ÿ0-9 ]+', ' ', dados['nome']).strip()
+    idade = re.sub(r'\D', '', str(dados['idade'])).strip()
+    genero = str(dados['genero'])
+    peso = re.sub(r'[^0-9,\.]', '', str(dados['peso'])).replace(',', '.').strip()
+    altura = re.sub(r'[^0-9,\.]', '', str(dados['altura'])).replace(',', '.').strip()
+    bairro = str(dados['bairro'])
+    diagnostico = str(dados['diagnostico'])
+    data_str = dados['data']
+    coords_list = bairro_coords.get(bairro)
+
+    if coords_list:
+        latitude, longitude = random.choice(coords_list)
+    else:
+        latitude, longitude = [None, None]
+    linha = [
+        nome_limpo, idade, genero, peso, altura,
+        latitude, longitude, bairro, data_str, diagnostico
+    ]
+
+    arquivo_existe = os.path.exists(arquivo_csv)
+    with open(arquivo_csv, "a", newline='', encoding="utf-8") as f:
+        writer = csv.writer(f)
+        if not arquivo_existe:
+            writer.writerow(header)
+        writer.writerow(linha)
+        f.flush()
+        os.fsync(f.fileno())

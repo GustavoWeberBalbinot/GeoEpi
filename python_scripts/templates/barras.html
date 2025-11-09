@@ -19,7 +19,9 @@
         <button onclick="rodarDBSCAN()">Rodar DBSCAN Geral</button>
         <div class="left-box">
           <div id="saida"></div>
-          <img id="barras_geral" alt="Gráfico de Barras Geral">
+          <img id="barras_geral" class="grafico" alt="Gráfico de Barras Geral">
+          <img id="pizza_covid" class="grafico" alt="Gráfico de pizza Covid">
+          <img id="pizza_zika" class="grafico" alt="Gráfico de pizza Zika">
         </div>
       </div>
 
@@ -27,7 +29,9 @@
       <div class="right-section">
         <button onclick="rodarDBSCANporData()">Rodar DBSCAN por Data</button>
         <div class="right-box">
-          <img id="barras_data" alt="Gráfico de Barras por Data">
+          <img id="barras_data" class="grafico" alt="Gráfico de Barras por Data">
+          <img id="pizza_Influenza" class="grafico" alt="Gráfico de pizza Influenza">
+          <img id="pizza_dengue" class="grafico" alt="Gráfico de pizza Dengue">
         </div>
       </div>
     </div>
@@ -57,11 +61,15 @@
     }
 
     function atualizarGraficos() {
-      const imgGeral = document.getElementById("barras_geral");
-      imgGeral.src = "/grafico/barras_geral?rand=" + Math.random();
+      // Barras
+      document.getElementById("barras_geral").src = "/grafico/barras_geral?rand=" + Math.random();
+      document.getElementById("barras_data").src = "/grafico/barras_data?rand=" + Math.random();
 
-      const imgData = document.getElementById("barras_data");
-      imgData.src = "/grafico/barras_data?rand=" + Math.random();
+      // Pizzas gerais
+      document.getElementById("pizza_covid").src = "/grafico/pizza_covid?rand=" + Math.random();
+      document.getElementById("pizza_zika").src = "/grafico/pizza_zika?rand=" + Math.random();
+      document.getElementById("pizza_Influenza").src = "/grafico/pizza_influenza?rand=" + Math.random();
+      document.getElementById("pizza_dengue").src = "/grafico/pizza_dengue?rand=" + Math.random();
     }
 
     function verificarNovosGraficos() {
