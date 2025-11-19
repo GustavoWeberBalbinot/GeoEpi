@@ -1,104 +1,57 @@
 [INFO] Nenhuma nova linha encontrada.
 [INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 4 pontos totais.
+[INFO] Matriz atualizada salva com 5 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 3 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 3 pontos totais.
 [INFO] Nenhuma matriz anterior encontrada. Criando nova.
 [INFO] Matriz atualizada salva com 7 pontos totais.
-[INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 7 pontos totais.
-[INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 22 pontos totais.
 Clusters detectados (geral):
  cluster diagnostico       data  local_lat  local_lon             nome
-      -1       COVID 2025-11-09   -26.3353   -48.8214      Gustavo  15
-      -1       COVID 2025-11-09   -26.2520   -48.8200               gg
-      -1       COVID 2025-11-09   -26.2700   -48.8200             aaaa
-      -1       COVID 2025-11-09   -26.3039   -48.8741             asda
-      -1      Dengue 2025-11-09   -26.3100   -48.8400      Gustavo  15
-      -1      Dengue 2025-11-09   -26.3000   -48.8700               gg
-      -1      Dengue 2025-11-09   -26.3450   -48.8700              aaa
-      -1      Dengue 2025-11-09   -26.3250   -48.8900           asdasd
-      -1      Dengue 2025-11-09   -26.3530   -48.8480              ggg
-      -1      Dengue 2025-11-09   -26.3143   -48.8652              ggg
-      -1      Dengue 2025-11-09   -26.3044   -48.8487               ds
-      -1   Influenza 2025-11-09   -26.3100   -48.8400      Gustavo  15
-      -1   Influenza 2025-11-09   -26.3000   -48.8700               gg
-      -1   Influenza 2025-11-09   -26.3350   -48.8500              aaa
-      -1   Influenza 2025-11-09   -26.2800   -48.8400           asdasd
-      -1   Influenza 2025-11-09   -26.3800   -48.8700              ggg
-      -1   Influenza 2025-11-09   -26.3350   -48.8900              ggg
-      -1   Influenza 2025-11-09   -26.3300   -48.8300               ds
-       0        Zika 2025-11-09   -26.2950   -48.8200              aaa
-       1        Zika 2025-11-09   -26.2950   -48.8550           asdasd
-      -1        Zika 2025-11-09   -26.3190   -48.8727 Rodrigo do  doze
-       2        Zika 2025-11-09   -26.3800   -48.8700              ggg
-       3        Zika 2025-11-09   -26.3350   -48.8900              ggg
-      -1        Zika 2025-11-09   -26.2800   -48.8700               ds
-       3        Zika 2025-11-09   -26.3400   -48.8950 Rodrigo do  doze
-       4        Zika 2025-11-09   -26.3100   -48.8700             aaaa
-       4        Zika 2025-11-09   -26.3039   -48.8741             asda
-       1        Zika 2025-11-09   -26.2950   -48.8500 Rodrigo do  doze
-       4        Zika 2025-11-09   -26.3100   -48.8700             aaaa
-      -1        Zika 2025-11-09   -26.2800   -48.8500             asda
-      -1        Zika 2025-11-09   -26.3100   -48.8400      Gustavo  15
-       4        Zika 2025-11-09   -26.3000   -48.8700               gg
-       0        Zika 2025-11-09   -26.2950   -48.8200              aaa
-       5        Zika 2025-11-09   -26.3250   -48.8900           asdasd
-       3        Zika 2025-11-09   -26.3400   -48.8950 Rodrigo do  doze
-       4        Zika 2025-11-09   -26.3100   -48.8700             aaaa
-       5        Zika 2025-11-09   -26.3250   -48.8950             asda
-       2        Zika 2025-11-09   -26.3800   -48.8700              ggg
-       4        Zika 2025-11-09   -26.3143   -48.8652              ggg
-      -1        Zika 2025-11-09   -26.3300   -48.8300               ds
+      -1       COVID 2025-09-19   -26.3353   -48.8214      Gustavo  15
+      -1       COVID 2025-09-19   -26.2777   -48.8478               gg
+      -1       COVID 2025-09-19   -26.2920   -48.8350             aaaa
+       0       COVID 2025-11-19   -26.3039   -48.8741             asda
+       0       COVID 2025-11-19   -26.3039   -48.8741            Teste
+      -1      Dengue 2025-11-19   -26.3190   -48.8727                G
+      -1      Dengue 2025-11-19   -26.3044   -48.8487            Teste
+      -1      Dengue 2025-11-19   -26.3530   -48.8480              ggg
+       1   Influenza 2025-11-19   -26.3143   -48.8652            Teste
+       1   Influenza 2025-11-19   -26.3143   -48.8652            Teste
+      -1   Influenza 2025-11-19   -26.3530   -48.8480               tt
+       2        Zika 2025-11-19   -26.3350   -48.8500              aaa
+       2        Zika 2025-11-19   -26.3350   -48.8500           asdasd
+      -1        Zika 2025-11-19   -26.3190   -48.8727 Rodrigo do  doze
+      -1        Zika 2025-11-19   -26.3530   -48.8480              ggg
+      -1        Zika 2025-11-19   -26.3143   -48.8652              ggg
+       3        Zika 2025-11-19   -26.3044   -48.8487               ds
+       3        Zika 2025-11-19   -26.3044   -48.8487            Teste
 [INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 4 pontos totais.
+[INFO] Matriz atualizada salva com 2 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 3 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 3 pontos totais.
 [INFO] Nenhuma matriz anterior encontrada. Criando nova.
 [INFO] Matriz atualizada salva com 7 pontos totais.
-[INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 7 pontos totais.
-[INFO] Nenhuma matriz anterior encontrada. Criando nova.
-[INFO] Matriz atualizada salva com 22 pontos totais.
 
-Surtos detectados em torno de 2025-11-09:
+Surtos detectados em torno de 2025-11-19:
  cluster diagnostico       data  local_lat  local_lon             nome
-      -1       COVID 2025-11-09   -26.3353   -48.8214      Gustavo  15
-      -1       COVID 2025-11-09   -26.2520   -48.8200               gg
-      -1       COVID 2025-11-09   -26.2700   -48.8200             aaaa
-      -1       COVID 2025-11-09   -26.3039   -48.8741             asda
-      -1      Dengue 2025-11-09   -26.3100   -48.8400      Gustavo  15
-      -1      Dengue 2025-11-09   -26.3000   -48.8700               gg
-      -1      Dengue 2025-11-09   -26.3450   -48.8700              aaa
-      -1      Dengue 2025-11-09   -26.3250   -48.8900           asdasd
-      -1      Dengue 2025-11-09   -26.3530   -48.8480              ggg
-      -1      Dengue 2025-11-09   -26.3143   -48.8652              ggg
-      -1      Dengue 2025-11-09   -26.3044   -48.8487               ds
-      -1   Influenza 2025-11-09   -26.3100   -48.8400      Gustavo  15
-      -1   Influenza 2025-11-09   -26.3000   -48.8700               gg
-      -1   Influenza 2025-11-09   -26.3350   -48.8500              aaa
-      -1   Influenza 2025-11-09   -26.2800   -48.8400           asdasd
-      -1   Influenza 2025-11-09   -26.3800   -48.8700              ggg
-      -1   Influenza 2025-11-09   -26.3350   -48.8900              ggg
-      -1   Influenza 2025-11-09   -26.3300   -48.8300               ds
-       0        Zika 2025-11-09   -26.2950   -48.8200              aaa
-       1        Zika 2025-11-09   -26.2950   -48.8550           asdasd
-      -1        Zika 2025-11-09   -26.3190   -48.8727 Rodrigo do  doze
-       2        Zika 2025-11-09   -26.3800   -48.8700              ggg
-       3        Zika 2025-11-09   -26.3350   -48.8900              ggg
-      -1        Zika 2025-11-09   -26.2800   -48.8700               ds
-       3        Zika 2025-11-09   -26.3400   -48.8950 Rodrigo do  doze
-       4        Zika 2025-11-09   -26.3100   -48.8700             aaaa
-       4        Zika 2025-11-09   -26.3039   -48.8741             asda
-       1        Zika 2025-11-09   -26.2950   -48.8500 Rodrigo do  doze
-       4        Zika 2025-11-09   -26.3100   -48.8700             aaaa
-      -1        Zika 2025-11-09   -26.2800   -48.8500             asda
-      -1        Zika 2025-11-09   -26.3100   -48.8400      Gustavo  15
-       4        Zika 2025-11-09   -26.3000   -48.8700               gg
-       0        Zika 2025-11-09   -26.2950   -48.8200              aaa
-       5        Zika 2025-11-09   -26.3250   -48.8900           asdasd
-       3        Zika 2025-11-09   -26.3400   -48.8950 Rodrigo do  doze
-       4        Zika 2025-11-09   -26.3100   -48.8700             aaaa
-       5        Zika 2025-11-09   -26.3250   -48.8950             asda
-       2        Zika 2025-11-09   -26.3800   -48.8700              ggg
-       4        Zika 2025-11-09   -26.3143   -48.8652              ggg
-      -1        Zika 2025-11-09   -26.3300   -48.8300               ds
+       0       COVID 2025-11-19   -26.3039   -48.8741             asda
+       0       COVID 2025-11-19   -26.3039   -48.8741            Teste
+      -1      Dengue 2025-11-19   -26.3190   -48.8727                G
+      -1      Dengue 2025-11-19   -26.3044   -48.8487            Teste
+      -1      Dengue 2025-11-19   -26.3530   -48.8480              ggg
+       1   Influenza 2025-11-19   -26.3143   -48.8652            Teste
+       1   Influenza 2025-11-19   -26.3143   -48.8652            Teste
+      -1   Influenza 2025-11-19   -26.3530   -48.8480               tt
+       2        Zika 2025-11-19   -26.3350   -48.8500              aaa
+       2        Zika 2025-11-19   -26.3350   -48.8500           asdasd
+      -1        Zika 2025-11-19   -26.3190   -48.8727 Rodrigo do  doze
+      -1        Zika 2025-11-19   -26.3530   -48.8480              ggg
+      -1        Zika 2025-11-19   -26.3143   -48.8652              ggg
+       3        Zika 2025-11-19   -26.3044   -48.8487               ds
+       3        Zika 2025-11-19   -26.3044   -48.8487            Teste
 
-Gráficos salvos em: d:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\imagens
+Gráficos salvos em: d:\Users\Gabriel\Desktop\Gustavo\RepositoriosGitHub\GeoEpi\python_scripts\imagens
