@@ -7,21 +7,27 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-  <div class="login-container">
+<h1 style="font-size: 60px;">GeoEpi</h1>
+ <div style="text-align: center; margin-bottom: 20px;">
+    <img src="{{ url_for('static', filename='logo_geoepi.png') }}" 
+         alt="logo" 
+         style="width: 250px; height: auto;">
+</div>
+<div class="login-container">
     <h2>Entrar</h2>
     <form id="loginForm">
-      <div class="input-field">
-        <label for="login"></label>
-        <input type="text" id="login" placeholder="Login" required>
-      </div>
-      <div class="input-field">
-        <label for="password"></label>
-        <input type="password" id="password" placeholder="Senha" required>
-      </div>
-      <button type="submit" class="login-btn">Entrar</button>
-      <p id="errorMsg" class="error-message">Login ou senha incorretos!</p>
+        <div class="input-field">
+            <label for="login"></label>
+            <input type="text" id="login" placeholder="Login" required>
+        </div>
+        <div class="input-field">
+            <label for="password"></label>
+            <input type="password" id="password" placeholder="Senha" required>
+        </div>
+        <button type="submit" class="login-btn">Entrar</button>
+        <p id="errorMsg" class="error-message">Login ou senha incorretos!</p>
     </form>
-  </div>
+</div>
 
   <script>
     // Login e senha corretos
@@ -47,6 +53,11 @@
         erro.style.display = "block";
       }
     });
+
+    function atualizarGraficos() {
+      //
+      document.getElementById("logo").src = "/grafico/logo_geoepi?rand=" + Math.random();
+    }
   </script>
 </body>
 </html>

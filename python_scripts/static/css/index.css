@@ -3,15 +3,16 @@
       font-family: "Poppins", sans-serif;
     }
 
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: gainsboro;
-    }
+  body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* <-- adiciona isso */
+  align-items: center;    /* centraliza horizontal */
+  justify-content: center;/* ainda centraliza vertical */
+  background: gainsboro;
+  }
 
     .login-container {
       background-color: rgb(184, 199, 204);
