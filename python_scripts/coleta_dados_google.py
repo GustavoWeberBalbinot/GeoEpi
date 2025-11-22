@@ -116,8 +116,8 @@ def baixar_e_formatar_csv():
 
         coords_list = bairro_coords.get(bairro)
         if coords_list:
-            latitude, longitude = coords_list[0]
-            #latitude, longitude = random.choice(coords_list) RANDOM
+            #latitude, longitude = coords_list[0] #No Random
+            latitude, longitude = random.choice(coords_list) #RANDOM
         else:
             latitude, longitude = [None, None]
 
@@ -162,8 +162,8 @@ def adicionar_no_csv(dados):
     coords_list = bairro_coords.get(bairro)
 
     if coords_list:
-        latitude, longitude = coords_list[0]
-        #latitude, longitude = random.choice(coords_list) RANDOM
+        #latitude, longitude = coords_list[0] #No Random
+        latitude, longitude = random.choice(coords_list) #RANDOM
     else:
         latitude, longitude = [None, None]
     linha = [

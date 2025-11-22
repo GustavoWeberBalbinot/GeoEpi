@@ -1,0 +1,67 @@
+[INFO] Nenhuma nova linha encontrada.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 6 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 5 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 5 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 7 pontos totais.
+Clusters detectados (geral):
+ cluster diagnostico       data  local_lat  local_lon             nome
+      -1       COVID 2025-09-19   -26.3353   -48.8214      Gustavo  15
+      -1       COVID 2025-09-19   -26.2777   -48.8478               gg
+      -1       COVID 2025-09-19   -26.2920   -48.8350             aaaa
+       0       COVID 2025-11-19   -26.3039   -48.8741             asda
+       0       COVID 2025-11-19   -26.3039   -48.8741            Teste
+      -1       COVID 2025-11-22   -26.2800   -48.8700               gu
+      -1      Dengue 2025-11-19   -26.3190   -48.8727                G
+       1      Dengue 2025-11-19   -26.3044   -48.8487            Teste
+       2      Dengue 2025-11-19   -26.3530   -48.8480              ggg
+       2      Dengue 2025-11-22   -26.3530   -48.8480            Teste
+       1      Dengue 2025-11-22   -26.3044   -48.8487               Gu
+       3   Influenza 2025-11-19   -26.3143   -48.8652            Teste
+       3   Influenza 2025-11-19   -26.3143   -48.8652            Teste
+      -1   Influenza 2025-11-19   -26.3530   -48.8480               tt
+      -1   Influenza 2025-11-22   -26.3039   -48.8741               Aa
+      -1   Influenza 2025-11-22   -26.3250   -48.8950              Abc
+       4        Zika 2025-11-19   -26.3350   -48.8500              aaa
+       4        Zika 2025-11-19   -26.3350   -48.8500           asdasd
+      -1        Zika 2025-11-19   -26.3190   -48.8727 Rodrigo do  doze
+      -1        Zika 2025-11-19   -26.3530   -48.8480              ggg
+      -1        Zika 2025-11-19   -26.3143   -48.8652              ggg
+       5        Zika 2025-11-19   -26.3044   -48.8487               ds
+       5        Zika 2025-11-19   -26.3044   -48.8487            Teste
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 3 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 5 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 5 pontos totais.
+[INFO] Nenhuma matriz anterior encontrada. Criando nova.
+[INFO] Matriz atualizada salva com 7 pontos totais.
+
+Surtos detectados em torno de 2025-11-22:
+ cluster diagnostico       data  local_lat  local_lon             nome
+       0       COVID 2025-11-19   -26.3039   -48.8741             asda
+       0       COVID 2025-11-19   -26.3039   -48.8741            Teste
+      -1       COVID 2025-11-22   -26.2800   -48.8700               gu
+      -1      Dengue 2025-11-19   -26.3190   -48.8727                G
+       1      Dengue 2025-11-19   -26.3044   -48.8487            Teste
+       2      Dengue 2025-11-19   -26.3530   -48.8480              ggg
+       2      Dengue 2025-11-22   -26.3530   -48.8480            Teste
+       1      Dengue 2025-11-22   -26.3044   -48.8487               Gu
+       3   Influenza 2025-11-19   -26.3143   -48.8652            Teste
+       3   Influenza 2025-11-19   -26.3143   -48.8652            Teste
+      -1   Influenza 2025-11-19   -26.3530   -48.8480               tt
+      -1   Influenza 2025-11-22   -26.3039   -48.8741               Aa
+      -1   Influenza 2025-11-22   -26.3250   -48.8950              Abc
+       4        Zika 2025-11-19   -26.3350   -48.8500              aaa
+       4        Zika 2025-11-19   -26.3350   -48.8500           asdasd
+      -1        Zika 2025-11-19   -26.3190   -48.8727 Rodrigo do  doze
+      -1        Zika 2025-11-19   -26.3530   -48.8480              ggg
+      -1        Zika 2025-11-19   -26.3143   -48.8652              ggg
+       5        Zika 2025-11-19   -26.3044   -48.8487               ds
+       5        Zika 2025-11-19   -26.3044   -48.8487            Teste
+
+Gráficos salvos em: d:\Gustavo\GitHubRepositores\GeoEpi\python_scripts\imagens

@@ -242,4 +242,78 @@
     }
 
 
+@media (max-width: 768px) {
+
+  body {
+    flex-direction: column; /* Sidebar vai para cima */
+    height: auto;
+  }
+
+  /* Sidebar ocupa largura total e não é mais fixa */
+  .menu-lateral {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+  .menu-topo {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .menu-foto {
+    width: 60px;
+    height: 60px;
+  }
+
+  .menu-botao, .menu-rodape {
+    width: auto;
+    padding: 8px 12px;
+    margin: 0;
+    font-size: 12px;
+  }
+
+  /* Área principal agora ocupa tela inteira */
+  .main-content {
+    margin-left: 0;   /* remove o espaço da sidebar */
+    width: 100%;
+  }
+
+  .navbar {
+    padding: 0 15px;
+  }
+
+  /* Empilhar tudo vertical */
+  .content {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  /* Central: todas boxes ficam empilhadas */
+  .center {
+    width: 100%;
+    align-items: center;
+  }
+
+  .box {
+    width: 90%;       /* mais adequado para mobile */
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Div da direita vira mais uma div empilhada */
+  .right-box {
+    width: 90%;
+    height: auto;
+    margin: 20px 0;
+  }
+}
+
 

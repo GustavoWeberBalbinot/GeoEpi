@@ -8,6 +8,7 @@ import threading
 import datetime
 
 app = Flask(__name__)
+lock = threading.Lock()
 
 BASE = os.path.dirname(__file__)
 CSV_PATH = os.path.join(BASE, "dados_pacientes.csv")
@@ -82,7 +83,8 @@ def enviar_dados():
             datetime.datetime.strptime(dados["data"], "%Y-%m-%d")
         except ValueError:
             return jsonify({"erro": "Formato de data inválido. Use AAAA-MM-DD."}), 400
-        adicionar_no_csv(dados)
+        with lock:
+            adicionar_no_csv(dados)
         return jsonify({"mensagem": "Dados salvos com sucesso!"}), 200
     
     except Exception as e:
@@ -167,4 +169,5 @@ def saida_python():
         return Response("Nenhuma saída registrada ainda.", mimetype="text/plain")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)# CMD ipconfig
