@@ -6,6 +6,8 @@ import os
 import time
 import threading
 import datetime
+import socket
+import qrcode
 
 app = Flask(__name__)
 lock = threading.Lock()
@@ -17,10 +19,34 @@ IMAGENS_PATH = os.path.join(BASE, "imagens")
 MAPA_PATH = os.path.join(BASE, "mapa_clusters.html")
 BOLINHAS_PATH = os.path.join(BASE, "bolinhas.html")
 LOG_FILE = "saida_python.log"
+CAMINHO_QR = os.path.join(IMAGENS_PATH, "QR_GeoEpi.png")
 
 
 if not os.path.exists(CSV_PATH):
     pd.DataFrame(columns=["idade","genero","peso","altura","local_lat","local_lon","data","diagnostico"]).to_csv(CSV_PATH, index=False)
+
+
+
+def get_local_ip():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        # Não envia nada, apenas testa rota
+        s.connect(("8.8.8.8", 80))
+        return s.getsockname()[0]
+    except Exception:
+        return "127.0.0.1"
+    finally:
+        s.close()
+
+
+ip_local = get_local_ip()
+url = f"http://{ip_local}:5000"
+
+# Gera o QR Code
+os.makedirs(IMAGENS_PATH, exist_ok=True)
+img = qrcode.make(url)
+img.save(CAMINHO_QR)
+
 
 
 def rodar_main_periodicamente():
